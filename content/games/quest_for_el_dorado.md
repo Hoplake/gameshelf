@@ -6,6 +6,7 @@ playTime: [30, 60]
 complexity: 1.94
 bggLink: 'https://boardgamegeek.com/boardgame/217372/the-quest-for-el-dorado'
 tags: ['Drafting', 'Race', 'Modular Board', 'Hand Management']
+recommendedForTwoPlayers: true
 ---
 
 ### Valmistelut (Setup)

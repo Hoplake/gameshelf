@@ -6,6 +6,7 @@ playTime: [30, 30]
 complexity: 1.74
 bggLink: 'https://boardgamegeek.com/boardgame/65244/forbidden-island'
 tags: ['Cooperative', 'Set Collection', 'Hand Management', 'Pick-up and Deliver', 'Tile Placement', 'Modular Board']
+recommendedForTwoPlayers: true
 ---
 
 *Salaisuuksien Saari* (Forbidden Island) on yhteistyöpeli 2–4 pelaajalle. Pelaajat työskentelevät yhdessä kerätäkseen neljä aarretta uppoavalta saarelta ja paetakseen helikopterilla ennen kuin saari katoaa aaltoihin. Voittakaa keräämällä kaikki aarteet ja paeten saarelta yhdessä.

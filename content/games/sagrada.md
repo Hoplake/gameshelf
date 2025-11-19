@@ -6,6 +6,7 @@ playTime: [30, 45]
 complexity: 1.92
 bggLink: 'https://boardgamegeek.com/boardgame/199561/sagrada'
 tags: ['Dice Rolling', 'Drafting', 'Set Collection', 'Contracts']
+recommendedForTwoPlayers: true
 ---
 
 *Sagrada* on noppadraftauspeli 1–6 pelaajalle. Pelin tavoitteena on rakentaa kaunein lasimaalausikkuna asettamalla värillisiä noppia ikkunakortilleen. Voittaa pelaaja, jolla on eniten pisteitä pelin lopussa.

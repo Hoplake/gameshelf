@@ -6,6 +6,7 @@ playTime: [30, 30]
 complexity: 1.78
 bggLink: 'https://boardgamegeek.com/boardgame/148228/splendor'
 tags: ['Drafting', 'Set Collection', 'Contracts']
+recommendedForTwoPlayers: true
 ---
 
 ## 🎯 Pelin tavoite

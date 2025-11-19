@@ -8,6 +8,7 @@ export interface Game {
   tags: string[];
   slug: string;
   content: string;
+  recommendedForTwoPlayers?: boolean;
 }
 
 export interface GameFilters {
@@ -15,6 +16,7 @@ export interface GameFilters {
   maxComplexity?: number;
   maxPlayTime?: number;
   tags?: string[];
+  recommendedForTwoPlayers?: boolean;
 }
 
 export type SortOption = 

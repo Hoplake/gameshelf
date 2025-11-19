@@ -55,10 +55,15 @@ export function GameFilters({
     onFiltersChange({ ...filters, tags: newTags.length > 0 ? newTags : undefined });
   };
 
+  const handleTwoPlayerToggle = (checked: boolean) => {
+    onFiltersChange({ ...filters, recommendedForTwoPlayers: checked || undefined });
+  };
+
   const hasActiveFilters = 
     filters.playerCount !== undefined ||
     filters.maxComplexity !== undefined ||
     filters.maxPlayTime !== undefined ||
+    filters.recommendedForTwoPlayers === true ||
     (filters.tags && filters.tags.length > 0);
 
   if (!isMounted) {
@@ -145,6 +150,19 @@ export function GameFilters({
             min="1"
             max="10"
           />
+        </div>
+
+        {/* Recommended for Two Players */}
+        <div className="space-y-2">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.recommendedForTwoPlayers || false}
+              onChange={(e) => handleTwoPlayerToggle(e.target.checked)}
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <span className="text-sm font-medium">Suositeltu kahdelle pelaajalle</span>
+          </label>
         </div>
 
         {/* Complexity */}

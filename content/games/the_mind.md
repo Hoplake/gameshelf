@@ -6,6 +6,7 @@ playTime: [20, 20]
 complexity: 1.08
 bggLink: 'https://boardgamegeek.com/boardgame/244992/the-mind'
 tags: ['Communication Limits', 'Cooperative', 'Hand Management']
+recommendedForTwoPlayers: true
 ---
 
 ## 🎯 Tavoite

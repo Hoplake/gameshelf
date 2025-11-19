@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Game } from '@/types/game';
-import { Users, Clock, Brain, ExternalLink } from 'lucide-react';
+import { Users, Clock, Brain, ExternalLink, UserCheck } from 'lucide-react';
 
 interface GameCardProps {
   game: Game;
 }
 
 export function GameCard({ game }: GameCardProps) {
-  const { title, coverImage, playerCount, playTime, complexity, tags, slug } = game;
+  const { title, coverImage, playerCount, playTime, complexity, tags, slug, recommendedForTwoPlayers } = game;
   
   // Add safety checks for required data
   if (!title || !playerCount || !playTime || !complexity || !tags) {
@@ -29,12 +29,25 @@ export function GameCard({ game }: GameCardProps) {
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+          {recommendedForTwoPlayers && (
+            <div className="absolute top-2 right-2 bg-blue-600 text-white rounded-full p-1.5 shadow-lg">
+              <UserCheck className="h-4 w-4" />
+            </div>
+          )}
         </div>
         
         <CardContent className="p-5 space-y-4">
-          <h3 className="font-semibold text-lg line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            {title}
-          </h3>
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-lg line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-1">
+              {title}
+            </h3>
+            {recommendedForTwoPlayers && (
+              <Badge variant="default" className="flex-shrink-0 text-xs bg-blue-600 hover:bg-blue-700">
+                <UserCheck className="h-3 w-3 mr-1" />
+                2p
+              </Badge>
+            )}
+          </div>
           
           <div className="grid grid-cols-3 gap-2 text-xs text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-1">

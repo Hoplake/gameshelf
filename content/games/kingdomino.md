@@ -6,6 +6,7 @@ playTime: [15, 25]
 complexity: 1.23
 bggLink: 'https://boardgamegeek.com/boardgame/204583/kingdomino'
 tags: ['Tile Placement', 'Medieval', 'Drafting']
+recommendedForTwoPlayers: true
 ---
 
 ## 🎯 Pelin tavoite

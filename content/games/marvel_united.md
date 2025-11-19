@@ -6,6 +6,7 @@ playTime: [40, 40]
 complexity: 1.84
 bggLink: 'https://boardgamegeek.com/boardgame/298047/marvel-united'
 tags: ['Cooperative', 'Modular Board', 'Hand Management']
+recommendedForTwoPlayers: true
 ---
 
 *Marvel United* on yhteistyöpeli 1–4 pelaajalle. Pelaajat ottavat supersankareiden roolit ja yrittävät yhdessä estää superroiston suunnitelmat. Voittakaa pelastamalla siviilejä, kukistamalla roistot, poistamalla uhat ja lopulta päihittämällä roisto.

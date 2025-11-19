@@ -54,6 +54,13 @@ export function filterGames(games: Game[], filters: GameFilters): Game[] {
       }
     }
 
+    // Recommended for two players filter
+    if (filters.recommendedForTwoPlayers === true) {
+      if (!game.recommendedForTwoPlayers) {
+        return false;
+      }
+    }
+
     return true;
   });
 }
