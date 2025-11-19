@@ -1,5 +1,22 @@
 import { Game, GameFilters, SortOption } from '@/types/game';
 
+/**
+ * Removes common articles from the beginning of a title for sorting purposes.
+ * This allows titles like "The Quest for El Dorado" to be sorted under "Q" instead of "T".
+ */
+function getSortTitle(title: string): string {
+  const trimmed = title.trim();
+  const articles = ['the ', 'a ', 'an '];
+  
+  for (const article of articles) {
+    if (trimmed.toLowerCase().startsWith(article)) {
+      return trimmed.slice(article.length).trim();
+    }
+  }
+  
+  return trimmed;
+}
+
 export function filterGames(games: Game[], filters: GameFilters): Game[] {
   return games.filter((game) => {
     // Player count filter
@@ -46,9 +63,13 @@ export function sortGames(games: Game[], sortBy: SortOption): Game[] {
 
   switch (sortBy) {
     case 'title-asc':
-      return sortedGames.sort((a, b) => a.title.localeCompare(b.title));
+      return sortedGames.sort((a, b) => 
+        getSortTitle(a.title).localeCompare(getSortTitle(b.title))
+      );
     case 'title-desc':
-      return sortedGames.sort((a, b) => b.title.localeCompare(a.title));
+      return sortedGames.sort((a, b) => 
+        getSortTitle(b.title).localeCompare(getSortTitle(a.title))
+      );
     case 'complexity-asc':
       return sortedGames.sort((a, b) => a.complexity - b.complexity);
     case 'complexity-desc':
