@@ -2,10 +2,11 @@
 title: 'Qwixx'
 coverImage: '/images/covers/qwixx_cover.jpg'
 playerCount: [2, 5]
+recommendedPlayerCount: [3, 4]
 playTime: [15, 15]
 complexity: 1.11
 bggLink: 'https://boardgamegeek.com/boardgame/131260/qwixx'
-tags: ['Dice Rolling', 'Bingo', Paper-and-Pencil]
+tags: ['Dice Rolling', 'Bingo', 'Paper-and-Pencil']
 ---
 
 *Qwixx* on nopeatempoinen noppapeli 2–5 pelaajalle. Pelaajat rastittavat numeroita neljällä väririvillä heittämällä noppia. Voittaa pelaaja, jolla on eniten pisteitä rastitettujen numeroiden mukaan.

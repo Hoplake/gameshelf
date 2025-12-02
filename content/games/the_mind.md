@@ -2,6 +2,7 @@
 title: 'The Mind'
 coverImage: '/images/covers/the_mind.png'
 playerCount: [2, 4]
+recommendedPlayerCount: [2, 3]
 playTime: [20, 20]
 complexity: 1.08
 bggLink: 'https://boardgamegeek.com/boardgame/244992/the-mind'

@@ -2,6 +2,7 @@ export interface Game {
   title: string;
   coverImage: string;
   playerCount: [number, number];
+  recommendedPlayerCount?: [number, number];
   playTime: [number, number];
   complexity: number;
   bggLink: string;

@@ -2,6 +2,7 @@
 title: 'Skip-Bo'
 coverImage: '/images/covers/skipbo_cover.jpg'
 playerCount: [2, 6]
+recommendedPlayerCount: [3, 4]
 playTime: [20, 30]
 complexity: 1.2
 bggLink: 'https://boardgamegeek.com/boardgame/30549/skip-bo'

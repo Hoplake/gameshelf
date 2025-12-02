@@ -3,9 +3,10 @@
 import { useState, useMemo, useEffect } from 'react';
 import { GameCard } from '@/components/GameCard';
 import { GameFilters } from '@/components/GameFilters';
+import { RandomGamePicker } from '@/components/RandomGamePicker';
 import { filterGames, sortGames } from '@/lib/games';
 import { Game, GameFilters as GameFiltersType, SortOption } from '@/types/game';
-import { Search, Grid, List } from 'lucide-react';
+import { Search, Grid, List, Shuffle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
@@ -20,6 +21,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   const [sortBy, setSortBy] = useState<SortOption>('title-asc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isMounted, setIsMounted] = useState(false);
+  const [showRandomPicker, setShowRandomPicker] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -88,6 +90,19 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
             </div>
             
             <div className="flex items-center gap-4">
+              {/* Random Game Picker */}
+              <Button
+                variant="default"
+                size="sm"
+                onClick={() => setShowRandomPicker(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+                title="Valitse satunnainen peli"
+              >
+                <Shuffle className="h-4 w-4 mr-2" />
+                <span className="hidden sm:inline">Mitä pelataan?</span>
+                <span className="sm:hidden">Satunnainen</span>
+              </Button>
+
               {/* Search */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -184,6 +199,14 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
           </div>
         </div>
       </div>
+
+      {/* Random Game Picker Modal */}
+      {showRandomPicker && filteredAndSortedGames.length > 0 && (
+        <RandomGamePicker
+          games={filteredAndSortedGames}
+          onClose={() => setShowRandomPicker(false)}
+        />
+      )}
     </div>
   );
 }

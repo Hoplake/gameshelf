@@ -2,6 +2,7 @@
 title: 'Taco Katti Pukki Juusto Pizza'
 coverImage: '/images/covers/taco_katti_cover.png'
 playerCount: [2, 8]
+recommendedPlayerCount: [4, 6]
 playTime: [10, 30]
 complexity: 1.04
 bggLink: 'https://boardgamegeek.com/boardgame/253664/taco-cat-goat-cheese-pizza'

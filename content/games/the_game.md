@@ -2,6 +2,7 @@
 title: 'The Game - Quick & Easy'
 coverImage: '/images/covers/the_game_cover.png'
 playerCount: [2, 4]
+recommendedPlayerCount: [2, 3]
 playTime: [8, 10]
 complexity: 1.05
 bggLink: 'https://boardgamegeek.com/boardgame/296512/the-game-quick-and-easy'

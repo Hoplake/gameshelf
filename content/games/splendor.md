@@ -2,6 +2,7 @@
 title: 'Splendor'
 coverImage: '/images/covers/splendor_cover.png'
 playerCount: [2, 4]
+recommendedPlayerCount: [2, 3]
 playTime: [30, 30]
 complexity: 1.78
 bggLink: 'https://boardgamegeek.com/boardgame/148228/splendor'

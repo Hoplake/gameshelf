@@ -2,6 +2,7 @@
 title: 'King of Tokyo'
 coverImage: '/images/covers/king_of_tokyo_cover.jpg'
 playerCount: [2, 6]
+recommendedPlayerCount: [4, 5]
 playTime: [30, 30]
 complexity: 1.49
 bggLink: 'https://boardgamegeek.com/boardgame/70323/king-of-tokyo'

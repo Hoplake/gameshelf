@@ -2,6 +2,7 @@
 title: 'Draftosaurus'
 coverImage: '/images/covers/draftosaurus_cover.jpg'
 playerCount: [2, 5]
+recommendedPlayerCount: [3, 4]
 playTime: [15, 15]
 complexity: 1.25
 bggLink: 'https://boardgamegeek.com/boardgame/264055/draftosaurus'

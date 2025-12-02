@@ -166,6 +166,30 @@
   @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4;
 }
 
+.prose table {
+  @apply w-full border-collapse my-4;
+}
+
+.prose thead {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.prose th {
+  @apply border border-gray-300 dark:border-gray-600 px-4 py-2 text-left font-semibold text-gray-900 dark:text-white;
+}
+
+.prose td {
+  @apply border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-700 dark:text-gray-300;
+}
+
+.prose tbody tr:nth-child(even) {
+  @apply bg-gray-50 dark:bg-gray-800/50;
+}
+
+.prose tbody tr:hover {
+  @apply bg-gray-100 dark:bg-gray-700;
+}
+
 /* Line clamp utility */
 .line-clamp-2 {
   display: -webkit-box;

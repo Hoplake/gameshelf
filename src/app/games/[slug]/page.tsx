@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface GamePageProps {
@@ -30,7 +31,7 @@ export default async function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
-  const { title, coverImage, playerCount, playTime, complexity, bggLink, tags, content } = game;
+  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, content } = game;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -79,6 +80,11 @@ export default async function GamePage({ params }: GamePageProps) {
                       <div className="font-medium">Pelaajat</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">
                         {playerCount[0]}-{playerCount[1]}
+                        {recommendedPlayerCount && (
+                          <span className="ml-2 text-xs text-gray-500 dark:text-gray-500">
+                            (suositus: {recommendedPlayerCount[0]}-{recommendedPlayerCount[1]})
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -137,7 +143,11 @@ export default async function GamePage({ params }: GamePageProps) {
             <Card>
               <CardContent className="p-8">
                 <div className="prose prose-lg max-w-none dark:prose-invert">
-                  <MDXRemote source={content} />
+                  <MDXRemote source={content} options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                    },
+                  }} />
                 </div>
               </CardContent>
             </Card>

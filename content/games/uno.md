@@ -2,10 +2,12 @@
 title: 'UNO'
 coverImage: '/images/covers/uno_cover.webp'
 playerCount: [2, 10]
+recommendedPlayerCount: [4, 6]
 playTime: [30, 30]
 complexity: 1.1
 bggLink: 'https://boardgamegeek.com/boardgame/2223/uno'
 tags: ['Hand Management', 'Take That', 'Matching']
+recommendedForTwoPlayers: true
 ---
 
 ## 🎯 UNO – Perussäännöt

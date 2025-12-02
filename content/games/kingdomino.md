@@ -2,6 +2,7 @@
 title: 'Kingdomino'
 coverImage: '/images/covers/kingdomino_cover.png'
 playerCount: [2, 4]
+recommendedPlayerCount: [2, 3]
 playTime: [15, 25]
 complexity: 1.23
 bggLink: 'https://boardgamegeek.com/boardgame/204583/kingdomino'

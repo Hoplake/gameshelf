@@ -2,6 +2,7 @@
 title: 'Menolippu'
 coverImage: '/images/covers/menolippu_cover.jpg'
 playerCount: [2, 5]
+recommendedPlayerCount: [3, 4]
 playTime: [30, 60]
 complexity: 1.82
 bggLink: 'https://boardgamegeek.com/boardgame/9209/ticket-to-ride'

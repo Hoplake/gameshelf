@@ -2,6 +2,7 @@
 title: 'The Quest for El Dorado'
 coverImage: '/images/covers/quest_for_el_dorado_cover.jpg'
 playerCount: [2, 4]
+recommendedPlayerCount: [3, 4]
 playTime: [30, 60]
 complexity: 1.94
 bggLink: 'https://boardgamegeek.com/boardgame/217372/the-quest-for-el-dorado'
