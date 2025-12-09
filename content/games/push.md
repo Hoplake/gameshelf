@@ -8,7 +8,13 @@ complexity: 1.05
 bggLink: 'https://boardgamegeek.com/boardgame/265256/push'
 tags: ['Dice Rolling', 'Push Your Luck']
 played: true
+description: 'Push-your-luck -peli, jossa pelaajat ottavat riskejä kerätäkseen kortteja penkkiin ja pankkiin ennen kuin nostopakka loppuu.'
 ---
+
+*Push* on push-your-luck -peli 2–6 pelaajalle. Pelaajat ottavat riskejä heittämällä noppia ja keräävät kortteja penkkiin ja pankkiin. Tavoitteena on kerätä eniten pisteitä ennen kuin nostopakka loppuu. Pelin lopussa lasketaan molemmat – sekä penkillä että pankissa olevat kortit. Peli on nopea, jännittävä ja sopii suuremmillekin pelaajamäärille.
+
+***
+
 ## 🎯 Pelin tavoite
 
 Kerää eniten pisteitä, ennen kuin nostopakka loppuu, ottamalla riskejä ja keräämällä kortteja penkkiin ja pankkiin.  
