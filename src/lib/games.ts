@@ -19,6 +19,17 @@ function getSortTitle(title: string): string {
 
 export function filterGames(games: Game[], filters: GameFilters): Game[] {
   return games.filter((game) => {
+    // Played status filter
+    if (filters.playedStatus !== undefined && filters.playedStatus !== 'all') {
+      const isPlayed = game.played === true;
+      if (filters.playedStatus === 'played' && !isPlayed) {
+        return false;
+      }
+      if (filters.playedStatus === 'unplayed' && isPlayed) {
+        return false;
+      }
+    }
+
     // Player count filter
     if (filters.playerCount !== undefined) {
       const [min, max] = game.playerCount;

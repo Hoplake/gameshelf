@@ -7,6 +7,8 @@ playTime: [20, 30]
 complexity: 1.66
 bggLink: 'https://boardgamegeek.com/boardgame/310632/dice-miner'
 tags: ['Drafting', 'Dice Rolling']
+played: true
+description: 'Dice-drafting -peli, jossa pelaajat keräävät noppia vuorilautalta kolmen kierroksen aikana rakentaakseen parhaan noppakokoelmansa.'
 ---
 *Dice Miner* on peli 1–4 pelaajalle ja kestää tyypillisesti 20–30 minuuttia. Peli koostuu kolmesta kierroksesta, joiden aikana pelaajat keräävät noppia vuorilautalta.
 

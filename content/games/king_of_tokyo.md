@@ -7,6 +7,8 @@ playTime: [30, 30]
 complexity: 1.49
 bggLink: 'https://boardgamegeek.com/boardgame/70323/king-of-tokyo'
 tags: ['Dice Rolling', 'Drafting', 'Push Your Luck', 'Take That', 'Player Elimination']
+played: true
+description: 'Noppapeli, jossa pelaajat ohjaavat jättiläishirviöitä taistelemassa Tokion hallinnasta heittämällä noppia ja käyttämällä kortteja.'
 ---
 Tämä tiivistelmä perustuu antamiisi lähdeaineistoihin, jotka kuvaavat **King of Tokyo** -pelin sääntöjä.
 

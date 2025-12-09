@@ -59,12 +59,18 @@ export function GameFilters({
     onFiltersChange({ ...filters, recommendedForTwoPlayers: checked || undefined });
   };
 
+  const handlePlayedStatusChange = (value: string) => {
+    const playedStatus = value === 'all' ? undefined : (value as 'played' | 'unplayed' | undefined);
+    onFiltersChange({ ...filters, playedStatus });
+  };
+
   const hasActiveFilters = 
     filters.playerCount !== undefined ||
     filters.maxComplexity !== undefined ||
     filters.maxPlayTime !== undefined ||
     filters.recommendedForTwoPlayers === true ||
-    (filters.tags && filters.tags.length > 0);
+    (filters.tags && filters.tags.length > 0) ||
+    (filters.playedStatus !== undefined && filters.playedStatus !== 'played');
 
   if (!isMounted) {
     return (
@@ -135,6 +141,24 @@ export function GameFilters({
               <SelectItem value="complexity-desc">Monimutkaisuus (Vaikea → Helppo)</SelectItem>
               <SelectItem value="playTime-asc">Peliaika (Lyhyt → Pitkä)</SelectItem>
               <SelectItem value="playTime-desc">Peliaika (Pitkä → Lyhyt)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Played Status */}
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Pelatut pelit</label>
+          <Select 
+            value={filters.playedStatus || 'played'} 
+            onValueChange={handlePlayedStatusChange}
+          >
+            <SelectTrigger id="played-status-select">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="played">Pelatut</SelectItem>
+              <SelectItem value="unplayed">Pelaamattomat</SelectItem>
+              <SelectItem value="all">Kaikki</SelectItem>
             </SelectContent>
           </Select>
         </div>

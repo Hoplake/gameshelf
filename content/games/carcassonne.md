@@ -8,7 +8,13 @@ complexity: 1.92
 bggLink: 'https://boardgamegeek.com/boardgame/822/carcassonne'
 tags: ['Tile Placement', 'Medieval', 'Area Control']
 recommendedForTwoPlayers: true
+played: true
+description: 'Klassinen laatikkopeli, jossa pelaajat rakentavat keskiaikaista Carcassonnen kaupunkia asettamalla laattoja ja sijoittamalla seuraajia eri alueisiin.'
 ---
+
+*Carcassonne* on klassinen laatikkopeli 2–5 pelaajalle. Pelaajat rakentavat keskiaikaista Carcassonnen kaupunkia asettamalla laattoja ja sijoittamalla seuraajia (meeplejä) kaupunkeihin, teihin, peltoihin ja luostareihin. Tavoitteena on kerätä eniten pisteitä valmistuneista alueista ja pelin lopussa pelloista. Peli on yksinkertainen oppia, mutta tarjoaa syvää strategista pelattavuutta.
+
+***
 
 ## 🎯 Pelin tavoite
 

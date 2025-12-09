@@ -7,6 +7,8 @@ playTime: [15, 15]
 complexity: 1.25
 bggLink: 'https://boardgamegeek.com/boardgame/264055/draftosaurus'
 tags: ['Set Collection', 'Dice Rolling', 'Drafting']
+played: true
+description: 'Nopeatempoinen noppadraftauspeli, jossa pelaajat rakentavat omia dinosauruspuistojaan asettamalla dinosauruksia aitauksiin.'
 ---
 
 *Draftosaurus* on nopeatempoinen noppadraftauspeli 2–5 pelaajalle. Pelaajat rakentavat omia dinosauruspuistojaan asettamalla dinosauruksia aitauksiin. Voittaa pelaaja, jolla on eniten pisteitä kahden kierroksen jälkeen.

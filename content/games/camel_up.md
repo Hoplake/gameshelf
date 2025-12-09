@@ -7,11 +7,15 @@ playTime: [20, 30]
 complexity: 1.5
 bggLink: 'https://boardgamegeek.com/boardgame/153938/camel-up'
 tags: ['Dice Rolling', 'Push Your Luck', 'Betting', 'Racing']
+played: true
+description: 'Kamelikilpailupeli, jossa pelaajat veikkaavat kamelien sijoituksia ja käyttävät erilaisia taktiikoita voittaakseen Egyptin puntia.'
 ---
 
-link: 
----
-## ![[camel_up_cover.jpg]]🎯 Pelin tavoite
+*Camel Up* on kamelikilpailupeli 2–8 pelaajalle. Pelaajat veikkaavat, mitkä kamelit sijoittuvat kärkisijoille ja mitkä jäävät viimeisiksi kamelikisassa. Pelaajat voivat heittää noppia, veikata etapin voittajia, asettaa aavikkolaattoja ja veikata kokonaiskilpailun voittajaa. Tavoitteena on kerätä eniten Egyptin puntia (rahaa) onnistuneilla vedoilla. Peli on hauska, nopea ja sopii suuremmillekin pelaajamäärille.
+
+***
+
+## 🎯 Pelin tavoite
 
 Arvaa ja veikkaa oikein, mitkä kamelit sijoittuvat kärkisijoille ja mitkä jäävät viimeisiksi kamelikisassa. Kerää eniten Egyptin puntia (rahaa) onnistuneilla vedoilla.
 

@@ -8,7 +8,13 @@ complexity: 1.23
 bggLink: 'https://boardgamegeek.com/boardgame/204583/kingdomino'
 tags: ['Tile Placement', 'Medieval', 'Drafting']
 recommendedForTwoPlayers: true
+played: true
+description: 'Nopea domino-pohjainen peli, jossa pelaajat rakentavat kuningaskuntia yhdistämällä laatikoita ja keräävät pisteitä yhtenäisistä maa-alueista.'
 ---
+
+*Kingdomino* on nopea ja kevyt peli 2–4 pelaajalle, joka yhdistää dominon ja laatikkopelin elementit. Pelaajat rakentavat oman kuningaskuntansa yhdistämällä domino-laattoja niin, että saavat mahdollisimman paljon pisteitä. Pisteet tulevat samanlaisista yhtenäisistä maa-alueista, joissa on kruunuja. Peli on helppo oppia ja sopii sekä perheille että kokeneemmille pelaajille.
+
+***
 
 ## 🎯 Pelin tavoite
 

@@ -8,7 +8,13 @@ complexity: 1.78
 bggLink: 'https://boardgamegeek.com/boardgame/148228/splendor'
 tags: ['Drafting', 'Set Collection', 'Contracts']
 recommendedForTwoPlayers: true
+played: true
+description: 'Kehityspeli, jossa pelaajat keräävät jalokiviä, ostavat kehityskortteja ja houkuttelevat aatelisia saadakseen eniten mainetta.'
 ---
+
+*Splendor* on kehityspeli 2–4 pelaajalle, jossa pelaajat keräävät jalokiviä, ostavat kehityskortteja ja houkuttelevat aatelisia saadakseen eniten mainetta (prestige points). Peli yhdistää resurssienhallinnan, suunnittelun ja strategisen valinnan. Tavoitteena on ensimmäisenä saavuttaa 15 tai enemmän pistettä ostaessasi kortteja ja houkuttelemalla aatelisia luoksesi.
+
+***
 
 ## 🎯 Pelin tavoite
 

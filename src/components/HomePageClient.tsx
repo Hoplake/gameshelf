@@ -17,7 +17,7 @@ interface HomePageClientProps {
 
 export function HomePageClient({ allGames, availableTags }: HomePageClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filters, setFilters] = useState<GameFiltersType>({});
+  const [filters, setFilters] = useState<GameFiltersType>({ playedStatus: 'played' });
   const [sortBy, setSortBy] = useState<SortOption>('title-asc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isMounted, setIsMounted] = useState(false);
@@ -45,7 +45,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   }, [allGames, filters, searchQuery, sortBy]);
 
   const handleClearFilters = () => {
-    setFilters({});
+    setFilters({ playedStatus: 'played' });
     setSearchQuery('');
   };
 
@@ -188,7 +188,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
             ) : (
               <div className={
                 viewMode === 'grid'
-                  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+                  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
                   : 'space-y-4'
               }>
                 {filteredAndSortedGames.map((game) => (

@@ -8,6 +8,8 @@ complexity: 1.13
 bggLink: 'https://boardgamegeek.com/boardgame/118247/lucky-numbers'
 tags: ['Tile Placement']
 recommendedForTwoPlayers: true
+played: true
+description: 'Nopea laattasijoituspeli, jossa pelaajat täyttävät 4×4-ruudukon numeroituilla laatoilla noudattaen järjestyssääntöjä.'
 ---
 
 *Onnen Apilat* (Lucky Numbers) on nopea laattasijoituspeli 1–4 pelaajalle. Pelaajat täyttävät 4×4-ruudukon numeroituilla laatoilla (1–20) noudattaen järjestyssääntöjä. Voittaa pelaaja, joka täyttää ruudukkonsa ensimmäisenä.

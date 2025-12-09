@@ -7,6 +7,8 @@ playTime: [15, 45]
 complexity: 1.10
 bggLink: 'https://boardgamegeek.com/boardgame/318977/micromacro-crime-city'
 tags: ['Cooperative', 'Deduction']
+played: true
+description: 'Yhteistyöpeli, jossa pelaajat toimivat etsivinä ja ratkaisevat rikosmysteereitä yksityiskohtaisella kaupunkikartalla.'
 ---
 
 *MicroMacro: Crime City* on yhteistyöpeli 1–7 pelaajalle. Pelaajat toimivat etsivinä ja ratkaisevat rikosmysteereitä yksityiskohtaisella kaupunkikartalla. Etsikää vihjeitä, seuratkaa epäiltyjen liikkeitä ja vastatkaa tapauskorttien kysymyksiin ratkaistaksesi tapaukset.

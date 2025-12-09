@@ -7,6 +7,8 @@ playTime: [30, 60]
 complexity: 1.82
 bggLink: 'https://boardgamegeek.com/boardgame/9209/ticket-to-ride'
 tags: ['Drafting', 'Contracts', 'Route Building', 'Set Collection', 'Push Your Luck']
+played: true
+description: 'Strateginen rautatiepeli, jossa pelaajat rakentavat rautatieverkostoa yhdistääkseen kaupunkeja ja suorittaakseen määränpääkortteja.'
 ---
 
 *Menolippu* (Ticket to Ride) on strateginen rautatiepeli 2–5 pelaajalle. Pelaajat rakentavat rautatieverkostoa yhdistääkseen kaupunkeja ja suorittaakseen määränpääkortteja. Voittaa pelaaja, jolla on eniten pisteitä reiteistä, määränpääkorteista ja pisimmästä yhtenäisestä reitistä.

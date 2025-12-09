@@ -8,7 +8,13 @@ complexity: 1.94
 bggLink: 'https://boardgamegeek.com/boardgame/217372/the-quest-for-el-dorado'
 tags: ['Drafting', 'Race', 'Modular Board', 'Hand Management']
 recommendedForTwoPlayers: true
+played: true
+description: 'Kilpailupeli, jossa pelaajat kilpailevat löytääkseen kultaista kaupunkia El Doradon käyttämällä kortteja liikkumiseen ja esteiden ylittämiseen.'
 ---
+
+*The Quest for El Dorado* on kilpailupeli 2–4 pelaajalle, jossa pelaajat kilpailevat löytääkseen kultaista kaupunkia El Doradon. Pelaajat käyttävät kortteja liikkumiseen modulaarisella radalla ja ylittävät erilaisia esteitä. Tavoitteena on olla ensimmäinen, joka saavuttaa El Doradon. Peli yhdistää korttidraftauksen, strategisen suunnittelun ja kilpailun elementit.
+
+***
 
 ### Valmistelut (Setup)
 

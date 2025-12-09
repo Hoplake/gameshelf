@@ -7,6 +7,8 @@ playTime: [20, 20]
 complexity: 1.34
 bggLink: 'https://boardgamegeek.com/boardgame/1219/labyrinth'
 tags: ['Route Building']
+played: true
+description: 'Labyrinttipeli, jossa pelaajat siirtävät labyrintin laattoja muuttaakseen reittejä ja liikuttavat hahmojaan löytääkseen Pokémoneja.'
 ---
 
 *Pokemon Labyrinth* on nopea labyrinttipeli 2–4 pelaajalle. Pelaajat siirtävät labyrintin laattoja muuttaakseen reittejä ja liikuttavat hahmojaan löytääkseen ja pyydystääkseen Pokémoneja. Voittaa pelaaja, joka pyydystää kaikki omat Pokémoninsa ja palaa lähtöruutuunsa ensimmäisenä.

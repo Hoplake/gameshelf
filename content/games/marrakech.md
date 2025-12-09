@@ -7,6 +7,8 @@ playTime: [30, 30]
 complexity: 1.33
 bggLink: 'https://boardgamegeek.com/boardgame/29223/marrakech'
 tags: ['Dice Rolling', 'Tile Placement', 'Area Majority', 'Layering']
+played: true
+description: 'Strategiapeli, jossa pelaajat kilpailevat mattojen myyjinä Marrakechin basaarissa liikuttamalla Assamia ja asettamalla mattoja.'
 ---
 
 *Marrakech* on nopea strategiapeli 2–4 pelaajalle. Pelaajat kilpailevat mattojen myyjinä Marrakechin basaarissa. Liikuttele Assamia pelilaudalla, maksa vastustajien matoista ja aseta omia mattojasi. Voittaa pelaaja, jolla on eniten rahaa ja näkyviä mattoja pelin lopussa.

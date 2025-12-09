@@ -7,6 +7,8 @@ playTime: [5, 15]
 complexity: 1.02
 bggLink: 'https://boardgamegeek.com/boardgame/91514/rhino-hero'
 tags: ['Hand Management', 'Stacking and Building']
+played: true
+description: 'Nopea 3D-pinoamispeli, jossa pelaajat rakentavat kerrostaloa asettamalla seiniä ja kattoja toistensa päälle auttaakseen Rhino-sankaria.'
 ---
 
 *Rhino Hero* on nopea 3D-pinoamispeli 2–5 pelaajalle. Pelaajat rakentavat kerrostaloa asettamalla seiniä ja kattoja toistensa päälle. Auttakaa Rhino-sankaria kiipeämään huipulle! Voittaa pelaaja, joka pääsee eroon kaikista kattokorteistaan ensimmäisenä, tai jos torni romahtaa, pelaaja, jolla on vähiten kortteja.

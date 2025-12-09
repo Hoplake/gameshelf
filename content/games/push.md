@@ -2,10 +2,12 @@
 title: 'Push'
 coverImage: '/images/covers/push_cover.jpg'
 playerCount: [2, 6]
+recommendedPlayerCount: [4, 5]
 playTime: [20, 25]
 complexity: 1.05
 bggLink: 'https://boardgamegeek.com/boardgame/265256/push'
 tags: ['Dice Rolling', 'Push Your Luck']
+played: true
 ---
 ## 🎯 Pelin tavoite
 

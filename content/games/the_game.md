@@ -8,7 +8,14 @@ complexity: 1.05
 bggLink: 'https://boardgamegeek.com/boardgame/296512/the-game-quick-and-easy'
 tags: ['Cooperative', 'Hand Management']
 recommendedForTwoPlayers: true
+played: true
+description: 'Yhteistyöpeli, jossa pelaajat yrittävät pelata kaikki kortit kahteen poistopakkaan nousevassa ja laskevassa järjestyksessä.'
 ---
+
+*The Game - Quick & Easy* on nopea yhteistyöpeli 2–4 pelaajalle. Pelaajat pelaa yhdessä ja yrittävät pelata kaikki 50 korttia kahteen poistopakkaan ennen kuin kortit loppuvat kädestä tai pakasta. Yksi pino kasvaa nousevassa järjestyksessä, toinen laskevassa. Pelaajat eivät voi kertoa tarkkoja numeroita, mutta voivat vihjata väreistä tai siitä, mille pakalle haluaisivat pelata. Peli vaatii yhteistyötä ja strategista suunnittelua.
+
+***
+
 ## 🎯 **Pelin tavoite**
 
 Pelaatte **yhdessä** ja yritätte pelata kaikki 50 korttia kahteen poistopakkaan ennen kuin kortit loppuvat kädestä tai pakasta.

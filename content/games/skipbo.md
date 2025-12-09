@@ -7,6 +7,8 @@ playTime: [20, 30]
 complexity: 1.2
 bggLink: 'https://boardgamegeek.com/boardgame/30549/skip-bo'
 tags: ['Card Game', 'Hand Management', 'Set Collection']
+played: true
+description: 'Nopea korttipeli, jossa pelaajat yrittävät tyhjentää oman varastopakkansa pelaamalla kortteja numerojärjestyksessä.'
 ---
 
 *Skip-Bo* on nopea korttipeli 2–6 pelaajalle. Pelin tavoitteena on olla ensimmäinen pelaaja, joka tyhjentää oman varastopakkansa pelaamalla kortteja numerojärjestyksessä yhteisiin rakennuspinoihin.

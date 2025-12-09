@@ -7,7 +7,13 @@ playTime: [10, 30]
 complexity: 1.04
 bggLink: 'https://boardgamegeek.com/boardgame/253664/taco-cat-goat-cheese-pizza'
 tags: ['Real-Time', 'Race', 'Pattern Recognition']
+played: true
+description: 'Nopea reaaliaikainen korttipeli, jossa pelaajat yrittävät päästä eroon korteistaan läpsäisemällä oikealla hetkellä.'
 ---
+
+*Taco Katti Pukki Juusto Pizza* on nopea ja hauska reaaliaikainen korttipeli 2–8 pelaajalle. Pelaajat yrittävät päästä eroon kaikista omista korteistaan ja olla ensimmäinen, joka läpsäisee poistopakkaa oikealla hetkellä. Peli vaatii nopeaa reaktioaikaa ja kuvioiden tunnistamista. Pelaajat laittavat kortteja poistopakkaan vuorotellen, ja kun kortti vastaa sanaa, jota pelaaja sanoo, kaikkien täytyy läpsäistä pakkaa mahdollisimman nopeasti!
+
+***
 
 ## 🎯 **Pelin tavoite**
 

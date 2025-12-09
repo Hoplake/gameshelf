@@ -7,6 +7,8 @@ playTime: [20, 20]
 complexity: 1.18
 bggLink: 'https://boardgamegeek.com/boardgame/129622/love-letter'
 tags: ['Deduction', 'Take That', 'Hand Management', 'Player Elimination']
+played: true
+description: 'Nopea korttipeli, jossa pelaajat kilpailevat saadakseen rakkauskirjeensä prinsessa Annetteen perille yhdistäen päättelyä ja strategiaa.'
 ---
 
 *Love Letter* on nopea korttipeli 2–4 pelaajalle. Pelaajat kilpailevat saadakseen rakkauskirjeensä prinsessa Annetteen perille. Peli yhdistää päättelyä, riskinottoa ja strategiaa. Voittaa pelaaja, joka kerää eniten suosionosoitusmerkkejä.

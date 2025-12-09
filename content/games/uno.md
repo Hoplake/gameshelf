@@ -8,7 +8,13 @@ complexity: 1.1
 bggLink: 'https://boardgamegeek.com/boardgame/2223/uno'
 tags: ['Hand Management', 'Take That', 'Matching']
 recommendedForTwoPlayers: true
+played: true
+description: 'Klassinen korttipeli, jossa pelaajat yrittävät päästä eroon korteistaan pelaamalla väriä, numeroa tai symbolia vastaavia kortteja.'
 ---
+
+*UNO* on klassinen korttipeli 2–10 pelaajalle. Pelaajat yrittävät päästä eroon kaikista korteistaan pelaamalla väriä, numeroa tai symbolia vastaavia kortteja. Peli sisältää erilaisia toimintokortteja, kuten Skip, Reverse ja Draw Two, jotka lisäävät taktista syvyyttä. Kun pelaajalla on vain yksi kortti jäljellä, hänen täytyy huutaa "UNO!" tai hänen täytyy nostaa lisää kortteja. Peli on nopea, hauska ja sopii kaikenikäisille.
+
+***
 
 ## 🎯 UNO – Perussäännöt
 

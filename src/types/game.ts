@@ -10,6 +10,8 @@ export interface Game {
   slug: string;
   content: string;
   recommendedForTwoPlayers?: boolean;
+  played?: boolean;
+  description?: string;
 }
 
 export interface GameFilters {
@@ -18,6 +20,7 @@ export interface GameFilters {
   maxPlayTime?: number;
   tags?: string[];
   recommendedForTwoPlayers?: boolean;
+  playedStatus?: 'played' | 'unplayed' | 'all';
 }
 
 export type SortOption = 

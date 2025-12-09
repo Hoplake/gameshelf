@@ -7,6 +7,8 @@ playTime: [15, 15]
 complexity: 1.03
 bggLink: 'https://boardgamegeek.com/boardgame/123570/strike'
 tags: ['Dice Rolling', 'Push Your Luck', 'Player Elimination']
+played: true
+description: 'Nopeatempoinen noppapeli, jossa pelaajat heittävät noppia areenalle ja keräävät samanlaisia noppia.'
 ---
 
 *Strike* on nopeatempoinen noppapeli 2–5 pelaajalle. Pelaajat heittävät noppia areenalle ja keräävät samanlaisia noppia. Voittaa pelaaja, jolla on viimeisenä noppia jäljellä.

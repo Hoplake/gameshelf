@@ -7,6 +7,8 @@ playTime: [30, 30]
 complexity: 1.17
 bggLink: 'https://boardgamegeek.com/boardgame/2243/yahtzee'
 tags: ['Dice Rolling', 'Push Your Luck', 'Set Collection', 'Paper and Pencil']
+played: true
+description: 'Klassinen noppapeli, jossa pelaajat heittävät viittä noppaa ja muodostavat erilaisia yhdistelmiä kerätäkseen pisteitä.'
 ---
 
 *Yahtzee* on klassinen noppapeli 2–10 pelaajalle. Pelaajat heittävät viittä noppaa ja muodostavat erilaisia yhdistelmiä kerätäkseen pisteitä. Voittaa pelaaja, jolla on eniten pisteitä 13 kierroksen jälkeen.

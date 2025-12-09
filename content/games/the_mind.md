@@ -8,7 +8,13 @@ complexity: 1.08
 bggLink: 'https://boardgamegeek.com/boardgame/244992/the-mind'
 tags: ['Communication Limits', 'Cooperative', 'Hand Management']
 recommendedForTwoPlayers: true
+played: true
+description: 'Yhteistyöpeli, jossa pelaajat yrittävät pelata korttinsa nousevassa numerojärjestyksessä ilman mitään viestintää tai kommunikaatiota.'
 ---
+
+*The Mind* on ainutlaatuinen yhteistyöpeli 2–4 pelaajalle, jossa pelaajat muodostavat joukkueen ja yrittävät pelata kaikki korttinsa nousevassa numerojärjestyksessä (1–100) ilman mitään viestintää. Peli etenee tasoissa, ja jokaisella tasolla pelaajat saavat enemmän kortteja. Pelin ydin on yhteisen "rytmin" löytäminen – pelaajien täytyy intuitiivisesti tietää, milloin pelata korttinsa. Ei puhetta, eleitä, ilmeitä tai muita vihjeitä sallittu!
+
+***
 
 ## 🎯 Tavoite
 
