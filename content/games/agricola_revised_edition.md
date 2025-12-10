@@ -8,7 +8,7 @@ complexity: 3.6
 bggLink: 'https://boardgamegeek.com/boardgame/200680/agricola-revised-edition'
 tags: ['Worker Placement', 'Resource Management', 'Farming']
 recommendedForTwoPlayers: true
-played: true
+played: false
 description: 'Klassinen työläistenasettelupeli, jossa pelaajat toimivat 1600-luvun maanviljelijöinä laajentaen maatilaansa, kasvattaen perhettään ja viljellen maata.'
 ---
 
