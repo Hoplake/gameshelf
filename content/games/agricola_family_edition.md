@@ -2,7 +2,8 @@
 title: 'Agricola - Family Edition'
 coverImage: '/images/covers/agricola_family_edition_cover.jpg'
 playerCount: [1, 4]
-recommendedPlayerCount: [2, 4]
+recommendedPlayerCount: [1, 4]
+bestPlayerCount: [3]
 playTime: [45, 45]
 complexity: 2.2
 bggLink: 'https://boardgamegeek.com/boardgame/205418/agricola-family-edition'

@@ -2,7 +2,8 @@
 title: 'Cøpenhagen'
 coverImage: '/images/covers/copenhagen_cover.jpg'
 playerCount: [2, 4]
-recommendedPlayerCount: [3, 4]
+recommendedPlayerCount: [2, 4]
+bestPlayerCount: [4]
 playTime: [20, 40]
 complexity: 1.69
 bggLink: 'https://boardgamegeek.com/boardgame/269595/copenhagen'

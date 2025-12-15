@@ -2,7 +2,8 @@
 title: 'Carcassonne'
 coverImage: '/images/covers/carcassonne_cover.jpg'
 playerCount: [2, 5]
-recommendedPlayerCount: [2, 4]
+recommendedPlayerCount: [2, 5]
+bestPlayerCount: [2]
 playTime: [30, 45]
 complexity: 1.92
 bggLink: 'https://boardgamegeek.com/boardgame/822/carcassonne'

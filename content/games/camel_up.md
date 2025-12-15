@@ -2,7 +2,8 @@
 title: 'Camel Up'
 coverImage: '/images/covers/camel_up_cover.jpg'
 playerCount: [2, 8]
-recommendedPlayerCount: [4, 6]
+recommendedPlayerCount: [3, 7]
+bestPlayerCount: [4,5]
 playTime: [20, 30]
 complexity: 1.5
 bggLink: 'https://boardgamegeek.com/boardgame/153938/camel-up'

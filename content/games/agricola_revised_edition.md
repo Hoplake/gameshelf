@@ -2,13 +2,14 @@
 title: 'Agricola - Revised Edition'
 coverImage: '/images/covers/agricola_revised_edition_cover.jpg'
 playerCount: [1, 4]
-recommendedPlayerCount: [2, 3]
+recommendedPlayerCount: [1, 4]
+bestPlayerCount: [3,4]
 playTime: [30, 120]
 complexity: 3.6
 bggLink: 'https://boardgamegeek.com/boardgame/200680/agricola-revised-edition'
 tags: ['Worker Placement', 'Resource Management', 'Farming']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Klassinen työläistenasettelupeli, jossa pelaajat toimivat 1600-luvun maanviljelijöinä laajentaen maatilaansa, kasvattaen perhettään ja viljellen maata.'
 ---
 
