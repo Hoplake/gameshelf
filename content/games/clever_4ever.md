@@ -6,7 +6,7 @@ recommendedPlayerCount: [1, 4]
 bestPlayerCount: [2]
 playTime: [30, 30]
 complexity: 2.3
-bggLink: 'https://boardgamegeek.com/boardgame/366162/clever-4ever
+bggLink: 'https://boardgamegeek.com/boardgame/366162/clever-4ever'
 tags: ['Dice', 'Paper and Pencil', 'Roll and Write']
 recommendedForTwoPlayers: true
 played: true

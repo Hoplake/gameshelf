@@ -6,7 +6,7 @@ recommendedPlayerCount: [4, 6]
 playTime: [30, 30]
 complexity: 1.2
 bggLink: 'https://boardgamegeek.com/boardgame/15512/diamant'
-tags: ['Push Your Luck', 'Press Your Luck', 'Adventure']
+tags: ['Push Your Luck', 'Adventure']
 recommendedForTwoPlayers: false
 played: false
 description: 'Push-your-luck -peli, jossa pelaajat tutkivat kaivoksia keräten jalokiviä ja välttäen vaaroja.'

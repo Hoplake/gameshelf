@@ -6,7 +6,7 @@ recommendedPlayerCount: [3, 4]
 playTime: [15, 15]
 complexity: 1.11
 bggLink: 'https://boardgamegeek.com/boardgame/131260/qwixx'
-tags: ['Dice Rolling', 'Bingo', 'Paper-and-Pencil']
+tags: ['Dice Rolling', 'Bingo', 'Paper and Pencil']
 played: true
 description: 'Nopeatempoinen noppapeli, jossa pelaajat rastittavat numeroita neljällä väririvillä heittämällä noppia.'
 ---
