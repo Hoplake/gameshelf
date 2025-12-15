@@ -95,11 +95,11 @@ export function GameFilters({
   }
 
   return (
-    <Card className="w-full">
-      <CardHeader className="pb-3">
+    <Card className="w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
+      <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2">
-            <Filter className="h-5 w-5" />
+          <CardTitle className="flex items-center gap-2 text-lg font-bold">
+            <Filter className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             Suodattimet ja lajittelu
           </CardTitle>
           <div className="flex items-center gap-2">
@@ -128,8 +128,8 @@ export function GameFilters({
       
       <CardContent className={`space-y-6 ${isExpanded ? 'block' : 'hidden md:block'}`}>
         {/* Sort */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">Lajittele</label>
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">Lajittele</label>
           <Select value={sortBy} onValueChange={onSortChange}>
             <SelectTrigger id="sort-select">
               <SelectValue />
@@ -146,8 +146,8 @@ export function GameFilters({
         </div>
 
         {/* Played Status */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">Pelatut pelit</label>
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">Pelatut pelit</label>
           <Select 
             value={filters.playedStatus || 'played'} 
             onValueChange={handlePlayedStatusChange}
@@ -164,8 +164,8 @@ export function GameFilters({
         </div>
 
         {/* Player Count */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">Pelaajamäärä</label>
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">Pelaajamäärä</label>
           <Input
             type="number"
             placeholder="Mikä tahansa"
@@ -177,7 +177,7 @@ export function GameFilters({
         </div>
 
         {/* Recommended for Two Players */}
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
@@ -185,13 +185,13 @@ export function GameFilters({
               onChange={(e) => handleTwoPlayerToggle(e.target.checked)}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
-            <span className="text-sm font-medium">Suositeltu kahdelle pelaajalle</span>
+            <span className="text-sm font-semibold text-gray-900 dark:text-white">Suositeltu kahdelle pelaajalle</span>
           </label>
         </div>
 
         {/* Complexity */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">
             Maksimi monimutkaisuus: {filters.maxComplexity ? (filters.maxComplexity <= 2 ? 'Helppo' : filters.maxComplexity <= 3.5 ? 'Keskitaso' : 'Vaikea') : 'Mikä tahansa'}
           </label>
           <Slider
@@ -205,8 +205,8 @@ export function GameFilters({
         </div>
 
         {/* Play Time */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">
             Maksimi peliaika: {filters.maxPlayTime || 'Mikä tahansa'} minuuttia
           </label>
           <Slider
@@ -220,8 +220,8 @@ export function GameFilters({
         </div>
 
         {/* Tags */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">Tunnisteet</label>
+        <div className="space-y-2.5">
+          <label className="text-sm font-semibold text-gray-900 dark:text-white">Tunnisteet</label>
           <div className="flex flex-wrap gap-2">
             {availableTags.map((tag) => {
               const isSelected = filters.tags?.includes(tag) || false;
@@ -229,7 +229,11 @@ export function GameFilters({
                 <Badge
                   key={tag}
                   variant={isSelected ? 'default' : 'outline'}
-                  className="cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900"
+                  className={`cursor-pointer transition-all duration-200 ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0'
+                      : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950 dark:hover:to-purple-950 border-gray-300 dark:border-gray-600'
+                  }`}
                   onClick={() => handleTagToggle(tag)}
                 >
                   {tag}

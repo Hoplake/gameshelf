@@ -19,38 +19,38 @@ export function GameCard({ game }: GameCardProps) {
 
   return (
     <Link href={`/games/${slug}`} className="group">
-      <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 bg-white dark:bg-gray-800">
+      <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700">
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
             src={coverImage}
             alt={`${title} pelin kansi`}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
             sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-          <div className="absolute top-2 right-2 flex flex-col gap-1">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 group-hover:from-black/70 transition-all duration-300" />
+          <div className="absolute top-3 right-3 flex flex-col gap-2">
             {recommendedForTwoPlayers && (
-              <div className="bg-blue-600 text-white rounded-full p-1.5 shadow-lg">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm">
                 <UserCheck className="h-4 w-4" />
               </div>
             )}
             {played === false && (
-              <div className="bg-orange-500 text-white rounded-full p-1.5 shadow-lg" title="Pelaamattomat">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Pelaamattomat">
                 <AlertCircle className="h-4 w-4" />
               </div>
             )}
           </div>
         </div>
         
-        <CardContent className="p-6 space-y-4">
-          <div className="space-y-2">
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="font-semibold text-xl line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-1">
+        <CardContent className="p-6 space-y-5">
+          <div className="space-y-3">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="font-bold text-xl line-clamp-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300 flex-1 leading-tight">
                 {title}
               </h3>
               {recommendedForTwoPlayers && (
-                <Badge variant="default" className="text-xs bg-blue-600 hover:bg-blue-700 flex-shrink-0">
+                <Badge variant="default" className="text-xs bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 flex-shrink-0 border-0">
                   <UserCheck className="h-3 w-3 mr-1" />
                   2p
                 </Badge>
@@ -58,7 +58,7 @@ export function GameCard({ game }: GameCardProps) {
             </div>
             {played === false && (
               <div>
-                <Badge variant="default" className="text-xs bg-orange-500 hover:bg-orange-600">
+                <Badge variant="default" className="text-xs bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 border-0">
                   <AlertCircle className="h-3 w-3 mr-1" />
                   Pelaamaton
                 </Badge>
@@ -67,41 +67,45 @@ export function GameCard({ game }: GameCardProps) {
           </div>
           
           {description && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-8">
+            <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed">
               {description}
             </p>
           )}
           
-          <div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <div className="flex items-center gap-1">
-              <Users className="h-4 w-4 flex-shrink-0" />
-              <span className="truncate">{playerCount[0]}-{playerCount[1]} pelaajaa</span>
+          <div className="flex flex-col gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-2">
+              <Users className="h-4 w-4 flex-shrink-0 text-blue-600 dark:text-blue-400" />
+              <span className="truncate font-medium">{playerCount[0]}-{playerCount[1]} pelaajaa</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Clock className="h-4 w-4 flex-shrink-0" />
-              <span className="truncate">{playTime[0]}-{playTime[1]} minuuttia</span>
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
+              <span className="truncate font-medium">{playTime[0]}-{playTime[1]} minuuttia</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Brain className="h-4 w-4 flex-shrink-0" />
-              <span className="truncate">{complexity <= 2 ? 'Helppo' : complexity <= 3.5 ? 'Keskitaso' : 'Vaikea'}</span>
+            <div className="flex items-center gap-2">
+              <Brain className="h-4 w-4 flex-shrink-0 text-indigo-600 dark:text-indigo-400" />
+              <span className="truncate font-medium">{complexity <= 2 ? 'Helppo' : complexity <= 3.5 ? 'Keskitaso' : 'Vaikea'}</span>
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1.5 pt-2">
             {tags.slice(0, 3).map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs">
+              <Badge 
+                key={tag} 
+                variant="secondary" 
+                className="text-xs bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 border-blue-200 dark:border-blue-800 hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900 dark:hover:to-purple-900 transition-colors"
+              >
                 {tag}
               </Badge>
             ))}
             {tags.length > 3 && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="secondary" className="text-xs bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
                 +{tags.length - 3}
               </Badge>
             )}
           </div>
           
-          <div className="flex justify-between items-center pt-2">
-            <span className="text-xs text-gray-500 dark:text-gray-500">
+          <div className="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700">
+            <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
               Klikkaa nähdäksesi tiedot
             </span>
             <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />

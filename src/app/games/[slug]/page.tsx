@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getGameBySlug, getAllGames } from '@/lib/games-server';
+import { getRecommendedGames } from '@/lib/recommendations';
+import { GameRecommendations } from '@/components/GameRecommendations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -31,23 +33,26 @@ export default async function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
+  const allGames = getAllGames();
+  const recommendedGames = getRecommendedGames(game, allGames, 6);
+
   const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, content } = game;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link href="/">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" className="hover:bg-blue-50 dark:hover:bg-blue-950">
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Takaisin kokoelmaan
                 </Button>
               </Link>
               <div className="h-6 w-px bg-gray-300 dark:bg-gray-600" />
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                 {title}
               </h1>
             </div>
@@ -153,6 +158,9 @@ export default async function GamePage({ params }: GamePageProps) {
             </Card>
           </div>
         </div>
+
+        {/* Recommendations */}
+        <GameRecommendations games={recommendedGames} currentGameSlug={slug} />
       </div>
     </div>
   );

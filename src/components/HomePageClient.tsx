@@ -1,13 +1,16 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
+import Link from 'next/link';
 import { GameCard } from '@/components/GameCard';
 import { GameFilters } from '@/components/GameFilters';
 import { RandomGamePicker } from '@/components/RandomGamePicker';
 import { filterGames, sortGames } from '@/lib/games';
+import { calculateStats } from '@/lib/statistics';
 import { Game, GameFilters as GameFiltersType, SortOption } from '@/types/game';
-import { Search, Grid, List, Shuffle } from 'lucide-react';
+import { Search, Grid, List, Shuffle, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface HomePageClientProps {
@@ -44,6 +47,9 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
     return sortGames(filtered, sortBy);
   }, [allGames, filters, searchQuery, sortBy]);
 
+  // Calculate statistics
+  const stats = useMemo(() => calculateStats(allGames), [allGames]);
+
   const handleClearFilters = () => {
     setFilters({ playedStatus: 'played' });
     setSearchQuery('');
@@ -75,27 +81,40 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-2">
                 Pelihylly
               </h1>
-              <p className="text-gray-600 dark:text-gray-400 mt-1">
+              <p className="text-lg text-gray-600 dark:text-gray-400">
                 Henkilökohtainen lautapelikokoelma
               </p>
             </div>
             
             <div className="flex items-center gap-4">
+              {/* Statistics Link */}
+              <Link href="/statistics">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hover:bg-blue-50 dark:hover:bg-blue-950 border-gray-300 dark:border-gray-600"
+                  title="Näytä tilastot"
+                >
+                  <BarChart3 className="h-4 w-4 mr-2" />
+                  <span className="hidden sm:inline">Tilastot</span>
+                </Button>
+              </Link>
+
               {/* Random Game Picker */}
               <Button
                 variant="default"
                 size="sm"
                 onClick={() => setShowRandomPicker(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 title="Valitse satunnainen peli"
               >
                 <Shuffle className="h-4 w-4 mr-2" />
@@ -105,13 +124,13 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
 
               {/* Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
                 <input
                   type="text"
                   placeholder="Etsi pelejä..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="pl-10 pr-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
                 />
               </div>
               
@@ -145,6 +164,50 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Quick Stats Summary */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <Link href="/statistics" className="group">
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold text-blue-900 dark:text-blue-100 group-hover:scale-110 transition-transform">
+                  {stats.totalGames}
+                </div>
+                <div className="text-xs text-blue-700 dark:text-blue-300 mt-1">Peliä yhteensä</div>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/statistics" className="group">
+            <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold text-green-900 dark:text-green-100 group-hover:scale-110 transition-transform">
+                  {stats.playedGames}
+                </div>
+                <div className="text-xs text-green-700 dark:text-green-300 mt-1">Pelattua</div>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/statistics" className="group">
+            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold text-purple-900 dark:text-purple-100 group-hover:scale-110 transition-transform">
+                  {stats.averageComplexity.toFixed(1)}
+                </div>
+                <div className="text-xs text-purple-700 dark:text-purple-300 mt-1">Keskim. monimutkaisuus</div>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/statistics" className="group">
+            <Card className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950 dark:to-pink-900 border-pink-200 dark:border-pink-800 hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold text-pink-900 dark:text-pink-100 group-hover:scale-110 transition-transform">
+                  {stats.twoPlayerGames}
+                </div>
+                <div className="text-xs text-pink-700 dark:text-pink-300 mt-1">Kahden pelaajan</div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className="lg:w-80 flex-shrink-0">
@@ -161,7 +224,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
           {/* Games Grid */}
           <div className="flex-1">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 {filteredAndSortedGames.length} peli{filteredAndSortedGames.length !== 1 ? 'ä' : ''} löytyi
               </h2>
             </div>

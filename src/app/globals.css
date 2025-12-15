@@ -123,31 +123,35 @@
 
 /* Custom prose styles for game content */
 .prose {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700 dark:text-gray-300 leading-7;
 }
 
 .prose h1 {
-  @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
+  @apply text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-8 tracking-tight;
 }
 
 .prose h2 {
-  @apply text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6;
+  @apply text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8 tracking-tight;
 }
 
 .prose h3 {
-  @apply text-lg font-medium text-gray-900 dark:text-white mb-2 mt-4;
+  @apply text-xl font-medium text-gray-900 dark:text-white mb-3 mt-6 tracking-tight;
 }
 
 .prose p {
-  @apply mb-4 leading-relaxed;
+  @apply mb-5 leading-7 text-base;
 }
 
 .prose ul {
-  @apply mb-4 pl-6;
+  @apply mb-5 pl-6 space-y-2;
+}
+
+.prose ol {
+  @apply mb-5 pl-6 space-y-2;
 }
 
 .prose li {
-  @apply mb-2;
+  @apply mb-2 leading-7;
 }
 
 .prose strong {
@@ -159,35 +163,35 @@
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono;
+  @apply bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 px-2 py-1 rounded text-sm font-mono border border-blue-200 dark:border-blue-800;
 }
 
 .prose blockquote {
-  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4;
+  @apply border-l-4 border-blue-500 pl-6 italic text-gray-700 dark:text-gray-300 my-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/30 dark:to-purple-950/30 py-4 rounded-r;
 }
 
 .prose table {
-  @apply w-full border-collapse my-4;
+  @apply w-full border-collapse my-6 rounded-lg overflow-hidden;
 }
 
 .prose thead {
-  @apply bg-gray-100 dark:bg-gray-800;
+  @apply bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900;
 }
 
 .prose th {
-  @apply border border-gray-300 dark:border-gray-600 px-4 py-2 text-left font-semibold text-gray-900 dark:text-white;
+  @apply border border-blue-200 dark:border-blue-800 px-5 py-3 text-left font-semibold text-gray-900 dark:text-white;
 }
 
 .prose td {
-  @apply border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-700 dark:text-gray-300;
+  @apply border border-blue-200 dark:border-blue-800 px-5 py-3 text-gray-700 dark:text-gray-300;
 }
 
 .prose tbody tr:nth-child(even) {
-  @apply bg-gray-50 dark:bg-gray-800/50;
+  @apply bg-blue-50/30 dark:bg-blue-950/20;
 }
 
 .prose tbody tr:hover {
-  @apply bg-gray-100 dark:bg-gray-700;
+  @apply bg-blue-100/50 dark:bg-blue-900/30 transition-colors;
 }
 
 /* Line clamp utility */
