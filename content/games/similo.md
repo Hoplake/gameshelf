@@ -7,8 +7,11 @@ playTime: [10, 10]
 complexity: 1.0
 bggLink: 'https://boardgamegeek.com/boardgame/268620/similo'
 tags: ['Cooperative', 'Deduction', 'Party Game', 'Card Game']
+partyGame: true
+goodWithFivePlus: true
 recommendedForTwoPlayers: false
 played: false
+bggValue: 15
 description: 'Yhteistyödeduktiopeli, jossa pelaajat antavat vihjeitä arvaajalle löytääkseen salaisen hahmon.'
 ---
 

@@ -69,6 +69,9 @@ export function GameFilters({
     filters.maxComplexity !== undefined ||
     filters.maxPlayTime !== undefined ||
     filters.recommendedForTwoPlayers === true ||
+    filters.partyGame === true ||
+    filters.goodWithFivePlus === true ||
+    filters.favorite === true ||
     (filters.tags && filters.tags.length > 0) ||
     (filters.playedStatus !== undefined && filters.playedStatus !== 'played');
 
@@ -186,6 +189,45 @@ export function GameFilters({
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <span className="text-sm font-semibold text-gray-900 dark:text-white">Suositeltu kahdelle pelaajalle</span>
+          </label>
+        </div>
+
+        {/* Party Games */}
+        <div className="space-y-2.5">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.partyGame || false}
+              onChange={(e) => onFiltersChange({ ...filters, partyGame: e.target.checked || undefined })}
+              className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <span className="text-sm font-semibold text-gray-900 dark:text-white">Juhlapelit</span>
+          </label>
+        </div>
+
+        {/* Good with 5+ Players */}
+        <div className="space-y-2.5">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.goodWithFivePlus || false}
+              onChange={(e) => onFiltersChange({ ...filters, goodWithFivePlus: e.target.checked || undefined })}
+              className="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <span className="text-sm font-semibold text-gray-900 dark:text-white">Hyvä 5+ pelaajalle</span>
+          </label>
+        </div>
+
+        {/* Favorite Games */}
+        <div className="space-y-2.5">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.favorite || false}
+              onChange={(e) => onFiltersChange({ ...filters, favorite: e.target.checked || undefined })}
+              className="w-4 h-4 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <span className="text-sm font-semibold text-gray-900 dark:text-white">Suosikkipelit</span>
           </label>
         </div>
 

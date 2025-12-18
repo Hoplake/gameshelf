@@ -10,8 +10,12 @@ export interface Game {
   slug: string;
   content: string;
   recommendedForTwoPlayers?: boolean;
+  partyGame?: boolean;
+  goodWithFivePlus?: boolean;
+  favorite?: boolean;
   played?: boolean;
   description?: string;
+  bggValue?: number; // Estimated value in EUR/USD
 }
 
 export interface GameFilters {
@@ -20,6 +24,9 @@ export interface GameFilters {
   maxPlayTime?: number;
   tags?: string[];
   recommendedForTwoPlayers?: boolean;
+  partyGame?: boolean;
+  goodWithFivePlus?: boolean;
+  favorite?: boolean;
   playedStatus?: 'played' | 'unplayed' | 'all';
 }
 

@@ -13,6 +13,10 @@ export interface CollectionStats {
   };
   topTags: Array<{ tag: string; count: number }>;
   twoPlayerGames: number;
+  partyGames: number;
+  goodWithFivePlus: number;
+  favoriteGames: number;
+  collectionValue: number;
 }
 
 export function calculateStats(games: Game[]): CollectionStats {
@@ -48,6 +52,14 @@ export function calculateStats(games: Game[]): CollectionStats {
     .slice(0, 10);
   
   const twoPlayerGames = games.filter(g => g.recommendedForTwoPlayers === true).length;
+  const partyGames = games.filter(g => g.partyGame === true).length;
+  const goodWithFivePlus = games.filter(g => g.goodWithFivePlus === true).length;
+  const favoriteGames = games.filter(g => g.favorite === true).length;
+  
+  // Calculate collection value from BGG values
+  const collectionValue = games.reduce((sum, game) => {
+    return sum + (game.bggValue || 0);
+  }, 0);
   
   return {
     totalGames,
@@ -58,6 +70,10 @@ export function calculateStats(games: Game[]): CollectionStats {
     complexityDistribution,
     topTags,
     twoPlayerGames,
+    partyGames,
+    goodWithFivePlus,
+    favoriteGames,
+    collectionValue,
   };
 }
 

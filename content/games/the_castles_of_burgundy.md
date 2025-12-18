@@ -9,6 +9,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/84876/castles-burgundy'
 tags: ['Strategy', 'Tile Placement', 'Dice Rolling', 'Set Collection']
 recommendedForTwoPlayers: true
 played: false
+bggValue: 40
 description: 'Strategiapeli, jossa pelaajat kehittävät kartanolejaan keskiaikaisessa Ranskassa rakentamalla asutuksia, linnoja ja kauppareittejä.'
 ---
 

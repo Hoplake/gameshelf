@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { GameCard } from '@/components/GameCard';
 import { GameFilters } from '@/components/GameFilters';
 import { RandomGamePicker } from '@/components/RandomGamePicker';
+import { HomePageSkeleton } from '@/components/LoadingSkeleton';
 import { filterGames, sortGames } from '@/lib/games';
 import { calculateStats } from '@/lib/statistics';
 import { Game, GameFilters as GameFiltersType, SortOption } from '@/types/game';
-import { Search, Grid, List, Shuffle, BarChart3 } from 'lucide-react';
+import { Search, Grid, List, Shuffle, BarChart3, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -56,28 +57,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   };
 
   if (!isMounted) {
-    return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <header className="bg-white dark:bg-gray-800 shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="animate-pulse">
-              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-1/3 mb-4"></div>
-              <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-            </div>
-          </div>
-        </header>
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="animate-pulse space-y-6">
-            <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-64 bg-gray-200 dark:bg-gray-700 rounded"></div>
-              ))}
-            </div>
-          </div>
-        </main>
-      </div>
-    );
+    return <HomePageSkeleton />;
   }
 
   return (
@@ -122,6 +102,19 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
                 >
                   <BarChart3 className="h-4 w-4 sm:mr-2" />
                   <span className="hidden sm:inline">Tilastot</span>
+                </Button>
+              </Link>
+
+              {/* Wishlist Link */}
+              <Link href="/wishlist" className="flex-1 sm:flex-none">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full sm:w-auto hover:bg-purple-50 dark:hover:bg-purple-950 border-gray-300 dark:border-gray-600"
+                  title="Näytä toivelista"
+                >
+                  <Gift className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Toivelista</span>
                 </Button>
               </Link>
 

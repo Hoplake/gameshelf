@@ -1,18 +1,20 @@
 ---
-title: 'Flip7'
+title: 'Flip 7'
 coverImage: '/images/covers/flip7_cover.jpg'
-playerCount: [2, 4]
-recommendedPlayerCount: [2, 3]
-playTime: [20, 30]
-complexity: 1.8
-bggLink: 'https://boardgamegeek.com/boardgame/371900/flip7'
-tags: ['Card Game', 'Set Collection', 'Push Your Luck']
-recommendedForTwoPlayers: true
+playerCount: [3, 18]
+recommendedPlayerCount: [5, 6]
+playTime: [20, 20]
+complexity: 1.04
+bggLink: 'https://boardgamegeek.com/boardgame/420087/flip-7'
+tags: ['Card Game', 'Push Your Luck', 'Party Game']
+partyGame: true
+goodWithFivePlus: true
 played: true
-description: 'Nopea korttipeli, jossa pelaajat pyrkivät muodostamaan rivejä, joiden summa on seitsemän, kerätäkseen pisteitä.'
+bggValue: 20
+description: 'Nopea push-your-luck -korttipeli, jossa pelaajat kääntävät kortteja yksi kerrallaan ilman, että he kääntävät samaa numeroa kahdesti. Tavoitteena on kerätä pisteitä kääntämällä kortteja, mutta riski on suuri - jos käännetään sama numero kahdesti, menetetään kaikki.'
 ---
 
-*Flip7* on nopea korttipeli 2–4 pelaajalle. Pelaajat pyrkivät muodostamaan rivejä, joiden summa on seitsemän, kerätäkseen pisteitä. Pelaajat kääntävät kortteja ja päättävät strategisesti, pitävätkö ne vai antavatko ne vastustajilleen. Tavoitteena on kerätä eniten pisteitä onnistuneista yhdistelmistä.
+*Flip 7* on nopea push-your-luck -korttipeli 3–18 pelaajalle (paras 5–6 pelaajalle). Pelaajat kääntävät kortteja yksi kerrallaan ilman, että he kääntävät samaa numeroa kahdesti. Tavoitteena on kerätä pisteitä kääntämällä kortteja, mutta riski on suuri - jos käännetään sama numero kahdesti, menetetään kaikki. Peli sisältää myös erikoisia kortteja, jotka voivat antaa bonuspisteitä, toisen mahdollisuuden tai jäädyttää pelaajia.
 
 ***
 

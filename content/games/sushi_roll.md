@@ -7,7 +7,9 @@ playTime: [20, 20]
 complexity: 1.29
 bggLink: 'https://boardgamegeek.com/boardgame/271869/sushi-roll'
 tags: ['Drafting', 'Dice Rolling', 'Set Collection']
+favorite: true
 played: true
+bggValue: 25
 description: 'Nopeatempoinen noppapeli, jossa pelaajat valitsevat ja heittävät noppia kerätäkseen parhaita sushiyhdistelmiä pisteiden saamiseksi.'
 ---
 

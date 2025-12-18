@@ -7,8 +7,11 @@ playTime: [20, 20]
 complexity: 1.0
 bggLink: 'https://boardgamegeek.com/boardgame/254640/just-one'
 tags: ['Cooperative', 'Party Game', 'Word Game', 'Deduction']
+partyGame: true
+goodWithFivePlus: true
 recommendedForTwoPlayers: false
 played: false
+bggValue: 25
 description: 'Yhteistyöpuolipeli, jossa pelaajat antavat yksilöllisiä vihjeitä auttaakseen toista pelaajaa arvaamaan salaisen sanan.'
 ---
 

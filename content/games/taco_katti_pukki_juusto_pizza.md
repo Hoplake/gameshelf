@@ -7,7 +7,10 @@ playTime: [10, 30]
 complexity: 1.04
 bggLink: 'https://boardgamegeek.com/boardgame/253664/taco-cat-goat-cheese-pizza'
 tags: ['Real-Time', 'Race', 'Pattern Recognition']
+partyGame: true
+goodWithFivePlus: true
 played: true
+bggValue: 12
 description: 'Nopea reaaliaikainen korttipeli, jossa pelaajat yrittävät päästä eroon korteistaan läpsäisemällä oikealla hetkellä.'
 ---
 

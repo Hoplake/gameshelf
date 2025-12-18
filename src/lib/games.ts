@@ -72,6 +72,27 @@ export function filterGames(games: Game[], filters: GameFilters): Game[] {
       }
     }
 
+    // Party game filter
+    if (filters.partyGame === true) {
+      if (!game.partyGame) {
+        return false;
+      }
+    }
+
+    // Good with 5+ players filter
+    if (filters.goodWithFivePlus === true) {
+      if (!game.goodWithFivePlus) {
+        return false;
+      }
+    }
+
+    // Favorite filter
+    if (filters.favorite === true) {
+      if (!game.favorite) {
+        return false;
+      }
+    }
+
     return true;
   });
 }

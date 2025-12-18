@@ -3,14 +3,17 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Game } from '@/types/game';
-import { Users, Clock, Brain, ExternalLink, UserCheck, AlertCircle } from 'lucide-react';
+import { Users, Clock, Brain, ExternalLink, UserCheck, AlertCircle, Star, UsersRound, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 
 interface GameCardProps {
   game: Game;
 }
 
 export function GameCard({ game }: GameCardProps) {
-  const { title, coverImage, playerCount, playTime, complexity, tags, slug, recommendedForTwoPlayers, played, description } = game;
+  const { title, coverImage, playerCount, playTime, complexity, tags, slug, recommendedForTwoPlayers, partyGame, goodWithFivePlus, favorite, played, description } = game;
+  const [imageError, setImageError] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
   
   // Add safety checks for required data
   if (!title || !playerCount || !playTime || !complexity || !tags) {
@@ -20,19 +23,48 @@ export function GameCard({ game }: GameCardProps) {
   return (
     <Link href={`/games/${slug}`} className="group">
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700">
-        <div className="relative aspect-[3/4] overflow-hidden">
-          <Image
-            src={coverImage}
-            alt={`${title} pelin kansi`}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
-          />
+        <div 
+          className="relative aspect-[3/4] overflow-hidden cursor-zoom-in"
+          onMouseEnter={() => setIsZoomed(true)}
+          onMouseLeave={() => setIsZoomed(false)}
+        >
+          {!imageError ? (
+            <Image
+              src={coverImage}
+              alt={`${title} pelin kansi`}
+              fill
+              className={`object-cover transition-transform duration-500 ${isZoomed ? 'scale-125' : 'group-hover:scale-110'}`}
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
+              <div className="text-center p-4">
+                <div className="text-4xl mb-2">🎲</div>
+                <div className="text-sm font-medium text-gray-600 dark:text-gray-400 line-clamp-2">{title}</div>
+              </div>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 group-hover:from-black/70 transition-all duration-300" />
           <div className="absolute top-3 right-3 flex flex-col gap-2">
+            {favorite && (
+              <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Suosikkipeli">
+                <Star className="h-4 w-4 fill-white" />
+              </div>
+            )}
             {recommendedForTwoPlayers && (
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Suositeltu kahdelle pelaajalle">
                 <UserCheck className="h-4 w-4" />
+              </div>
+            )}
+            {partyGame && (
+              <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Juhlapeli">
+                <Sparkles className="h-4 w-4" />
+              </div>
+            )}
+            {goodWithFivePlus && (
+              <div className="bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Hyvä 5+ pelaajalle">
+                <UsersRound className="h-4 w-4" />
               </div>
             )}
             {played === false && (

@@ -9,6 +9,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/30549/pandemic'
 tags: ['Cooperative', 'Hand Management', 'Point-to-Point Movement', 'Set Collection']
 recommendedForTwoPlayers: true
 played: false
+bggValue: 35
 description: 'Yhteistyöpeli, jossa pelaajat toimivat tautien torjuntatiimin jäseninä ja pyrkivät estämään neljän tappavan taudin leviämisen ympäri maailmaa.'
 ---
 

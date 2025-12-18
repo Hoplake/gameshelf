@@ -7,8 +7,11 @@ playTime: [45, 45]
 complexity: 1.3
 bggLink: 'https://boardgamegeek.com/boardgame/432/6-nimmt'
 tags: ['Card Game', 'Hand Management', 'Simultaneous Action Selection']
+partyGame: true
+goodWithFivePlus: true
 recommendedForTwoPlayers: false
 played: false
+bggValue: 12
 description: 'Korttipeli, jossa pelaajat yrittävät välttää korttien keräämistä, jotka antavat negatiivisia pisteitä.'
 ---
 

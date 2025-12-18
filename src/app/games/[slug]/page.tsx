@@ -66,14 +66,15 @@ export default async function GamePage({ params }: GamePageProps) {
           {/* Game Info Sidebar */}
           <div className="lg:col-span-1">
             <Card className="sticky top-8">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-t-lg">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-t-lg group cursor-zoom-in">
                 <Image
                   src={coverImage}
                   alt={`${title} pelin kansi`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               
               <CardContent className="p-6 space-y-6">

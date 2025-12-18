@@ -7,7 +7,10 @@ playTime: [30, 30]
 complexity: 1.17
 bggLink: 'https://boardgamegeek.com/boardgame/2243/yahtzee'
 tags: ['Dice Rolling', 'Push Your Luck', 'Set Collection', 'Paper and Pencil']
+partyGame: true
+goodWithFivePlus: true
 played: true
+bggValue: 15
 description: 'Klassinen noppapeli, jossa pelaajat heittävät viittä noppaa ja muodostavat erilaisia yhdistelmiä kerätäkseen pisteitä.'
 ---
 

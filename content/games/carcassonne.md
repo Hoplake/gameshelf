@@ -9,7 +9,9 @@ complexity: 1.92
 bggLink: 'https://boardgamegeek.com/boardgame/822/carcassonne'
 tags: ['Tile Placement', 'Medieval', 'Area Control']
 recommendedForTwoPlayers: true
+favorite: true
 played: true
+bggValue: 30
 description: 'Klassinen laatikkopeli, jossa pelaajat rakentavat keskiaikaista Carcassonnen kaupunkia asettamalla laattoja ja sijoittamalla seuraajia eri alueisiin.'
 ---
 

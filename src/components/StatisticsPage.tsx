@@ -179,6 +179,85 @@ export function StatisticsPage({ stats, allGames }: StatisticsPageProps) {
           </Card>
         </div>
 
+        {/* Additional Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950 dark:to-yellow-900 border-yellow-200 dark:border-yellow-800">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-medium text-yellow-900 dark:text-yellow-100">
+                  Suosikkipelit
+                </CardTitle>
+                <Star className="h-5 w-5 text-yellow-600 dark:text-yellow-400" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-bold text-yellow-900 dark:text-yellow-100">
+                {stats.favoriteGames}
+              </div>
+              <p className="text-sm text-yellow-700 dark:text-yellow-300 mt-1">
+                merkattu suosikiksi
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950 dark:to-cyan-900 border-cyan-200 dark:border-cyan-800">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-medium text-cyan-900 dark:text-cyan-100">
+                  Juhlapelit
+                </CardTitle>
+                <Zap className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-bold text-cyan-900 dark:text-cyan-100">
+                {stats.partyGames}
+              </div>
+              <p className="text-sm text-cyan-700 dark:text-cyan-300 mt-1">
+                juhlapeli
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950 dark:to-teal-900 border-teal-200 dark:border-teal-800">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-medium text-teal-900 dark:text-teal-100">
+                  5+ pelaajaa
+                </CardTitle>
+                <Users className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-bold text-teal-900 dark:text-teal-100">
+                {stats.goodWithFivePlus}
+              </div>
+              <p className="text-sm text-teal-700 dark:text-teal-300 mt-1">
+                hyvä isommille ryhmille
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950 dark:to-emerald-900 border-emerald-200 dark:border-emerald-800">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-medium text-emerald-900 dark:text-emerald-100">
+                  Kokoelman arvo
+                </CardTitle>
+                <Award className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-bold text-emerald-900 dark:text-emerald-100">
+                {stats.collectionValue > 0 ? `€${Math.round(stats.collectionValue).toLocaleString()}` : '—'}
+              </div>
+              <p className="text-sm text-emerald-700 dark:text-emerald-300 mt-1">
+                {stats.collectionValue > 0 ? 'BGG:n mukaan' : 'Ei arvioitu'}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Complexity Distribution */}
           <Card>

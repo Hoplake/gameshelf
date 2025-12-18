@@ -8,7 +8,10 @@ playTime: [20, 30]
 complexity: 1.5
 bggLink: 'https://boardgamegeek.com/boardgame/153938/camel-up'
 tags: ['Dice Rolling', 'Push Your Luck', 'Betting', 'Racing']
+partyGame: true
+goodWithFivePlus: true
 played: true
+bggValue: 35
 description: 'Kamelikilpailupeli, jossa pelaajat veikkaavat kamelien sijoituksia ja käyttävät erilaisia taktiikoita voittaakseen Egyptin puntia.'
 ---
 

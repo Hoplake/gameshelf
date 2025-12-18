@@ -22,9 +22,13 @@ When you want to add a new game, provide the following information:
 - `complexity`: Number from 1.0 to 5.0 (e.g., 2.4)
 - `bggLink`: BoardGameGeek URL (e.g., 'https://boardgamegeek.com/boardgame/12345/game-name')
 - `tags`: Array of tags (e.g., ['Cooperative', 'Hand Management', 'Dice Rolling'])
-- `recommendedForTwoPlayers`: Boolean (true/false)
+- `recommendedForTwoPlayers`: Optional boolean (true if recommended for two players)
+- `partyGame`: Optional boolean (true if it's a party game, good for larger groups)
+- `goodWithFivePlus`: Optional boolean (true if the game works well with 5+ players)
+- `favorite`: Optional boolean (true if it's one of your favorite games)
 - `played`: Boolean (true if already played, false if unplayed)
 - `description`: Brief description in Finnish (one sentence)
+- `bggValue`: Optional number (estimated value in EUR based on BGG market prices)
 
 ### Content Structure:
 1. **Description Paragraph**: Longer description paragraph (italic format) explaining the game
@@ -47,7 +51,11 @@ complexity: X.X
 bggLink: 'https://boardgamegeek.com/boardgame/XXXXX/game-name'
 tags: ['Tag1', 'Tag2', 'Tag3']
 recommendedForTwoPlayers: true/false
+partyGame: true/false
+goodWithFivePlus: true/false
+favorite: true/false
 played: false
+bggValue: 25
 description: 'Brief description in Finnish.'
 ---
 
@@ -127,4 +135,8 @@ The command will generate the properly formatted file with all sections filled i
 - Make sure the `played` field is set correctly (false for new games)
 - Check that the BGG link is correct
 - Verify complexity rating matches BGG rating
+- Use `partyGame: true` for games that work well with larger groups (typically 5+ players, light rules, social interaction)
+- Use `goodWithFivePlus: true` for games that support and work well with 5+ players
+- Use `favorite: true` to mark your favorite games
+- Add `bggValue` (in EUR) based on BGG market prices for collection value tracking
 

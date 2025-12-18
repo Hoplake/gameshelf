@@ -7,8 +7,10 @@ playTime: [15, 15]
 complexity: 1.1
 bggLink: 'https://boardgamegeek.com/boardgame/172225/exploding-kittens'
 tags: ['Card Game', 'Hand Management', 'Take That', 'Party Game']
+partyGame: true
 recommendedForTwoPlayers: false
 played: false
+bggValue: 20
 description: 'Strateginen korttipeli, jossa pelaajat piirtävät kortteja välttäen räjähtävän kissan, joka eliminoi heidät pelistä.'
 ---
 

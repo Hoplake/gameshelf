@@ -7,8 +7,11 @@ playTime: [30, 30]
 complexity: 1.1
 bggLink: 'https://boardgamegeek.com/boardgame/2223/uno'
 tags: ['Hand Management', 'Take That', 'Matching']
+partyGame: true
+goodWithFivePlus: true
 recommendedForTwoPlayers: true
 played: true
+bggValue: 10
 description: 'Klassinen korttipeli, jossa pelaajat yrittävät päästä eroon korteistaan pelaamalla väriä, numeroa tai symbolia vastaavia kortteja.'
 ---
 

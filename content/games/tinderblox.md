@@ -7,8 +7,11 @@ playTime: [5, 15]
 complexity: 1.2
 bggLink: 'https://boardgamegeek.com/boardgame/280168/tinderblox'
 tags: ['Dexterity', 'Bluffing', 'Party Game', 'Real-Time']
+partyGame: true
+goodWithFivePlus: true
 recommendedForTwoPlayers: false
 played: true
+bggValue: 18
 description: 'Nopea ja jännittävä tasapainottelupeli, jossa pelaajat rakentavat nuotiota korttien ohjeiden mukaisesti käyttäen pieniä puupalikoita.'
 ---
 

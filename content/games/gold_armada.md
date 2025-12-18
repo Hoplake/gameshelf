@@ -8,7 +8,7 @@ complexity: 1.2
 bggLink: 'https://boardgamegeek.com/boardgame/224011/gold-armada'
 tags: ['Dice Rolling', 'Push Your Luck', 'Family Game']
 recommendedForTwoPlayers: false
-played: false
+played: true
 description: 'Push-your-luck -noppapeli, jossa pelaajat heittävät erikoisnoppia yrittäen kerätä kultakolikoita laivaston laiturilta.'
 ---
 
