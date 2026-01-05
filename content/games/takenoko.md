@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/70919/takenoko'
 tags: ['Dice Rolling', 'Tile Placement', 'Set Collection', 'Pattern Building']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Puutarhapeli, jossa pelaajat viljelevät bambua, hoitavat keisarillista puutarhaa ja ruokkivat nälkäistä pandaa suorittaen tavoitteita.'
 ---
 

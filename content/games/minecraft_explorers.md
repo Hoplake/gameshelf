@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/413403/minecraft-explorers'
 tags: ['Cooperative', 'Card Game', 'Adventure', 'Action Points']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Yhteistyöhön perustuva korttipeli, jossa pelaajat tutkivat Minecraftin maisemia ja etsivät piilotettuja aarteita.'
 ---
 

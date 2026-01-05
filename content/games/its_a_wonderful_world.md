@@ -8,7 +8,7 @@ complexity: 2.2
 bggLink: 'https://boardgamegeek.com/boardgame/271324/its-a-wonderful-world'
 tags: ['Card Game', 'Drafting', 'Engine Building', 'Solo']
 recommendedForTwoPlayers: false
-played: false
+played: true
 description: 'Korttienhallintapeli, jossa pelaajat rakentavat sivilisaatioita draftaten kortteja ja rakentamalla projekteja.'
 ---
 

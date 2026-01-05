@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/244331/blue-lagoon'
 tags: ['Area Control', 'Set Collection', 'Strategy']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Aluehallinta- ja settienkeräyspeli, jossa pelaajat johtavat uudisasukkaita tutkimaan saaristoa, keräämään resursseja ja perustamaan kyliä.'
 ---
 

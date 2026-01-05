@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/423689/disney-lorcana-gateway'
 tags: ['Card Game', 'Trading Card Game', 'Deck Building', 'Disney', 'Fantasy']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Aloituspaketti Disney Lorcana -keräilykorttipeliin, jossa pelaajat rakentavat pakkojaan ja taistelevat Disneyn hahmoilla.'
 ---
 

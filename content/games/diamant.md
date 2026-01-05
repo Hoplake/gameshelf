@@ -10,7 +10,7 @@ tags: ['Push Your Luck', 'Adventure']
 partyGame: true
 goodWithFivePlus: true
 recommendedForTwoPlayers: false
-played: false
+played: true
 bggValue: 20
 description: 'Push-your-luck -peli, jossa pelaajat tutkivat kaivoksia keräten jalokiviä ja välttäen vaaroja.'
 ---

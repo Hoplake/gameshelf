@@ -23,7 +23,8 @@ export function WishlistGameCard({ game }: WishlistGameCardProps) {
   }
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 group">
+    <Link href={`/wishlist/${game.slug}`} className="block">
+      <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 group cursor-pointer">
       <div 
         className="relative aspect-[3/4] overflow-hidden cursor-zoom-in"
         onMouseEnter={() => setIsZoomed(true)}
@@ -125,7 +126,7 @@ export function WishlistGameCard({ game }: WishlistGameCardProps) {
         </div>
         
         <div className="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700">
-          <Link 
+          <a 
             href={bggLink} 
             target="_blank" 
             rel="noopener noreferrer"
@@ -133,11 +134,12 @@ export function WishlistGameCard({ game }: WishlistGameCardProps) {
             onClick={(e) => e.stopPropagation()}
           >
             BGG →
-          </Link>
+          </a>
           <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" />
         </div>
       </CardContent>
     </Card>
+    </Link>
   );
 }
 
