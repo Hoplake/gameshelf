@@ -6,7 +6,6 @@ import { WishlistGameCard } from './WishlistGameCard';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
 import { Search, Gift } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import Link from 'next/link';
@@ -68,11 +67,6 @@ export function WishlistPageClient({ wishlistGames }: WishlistPageClientProps) {
     
     return sortWishlistGames(filtered, sortBy);
   }, [wishlistGames, searchQuery, sortBy]);
-
-  const allTags = useMemo(() => {
-    const tags = wishlistGames.flatMap((game) => game.tags);
-    return Array.from(new Set(tags)).sort();
-  }, [wishlistGames]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">

@@ -126,15 +126,17 @@ export function WishlistGameCard({ game }: WishlistGameCardProps) {
         </div>
         
         <div className="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700">
-          <a 
-            href={bggLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-xs text-gray-500 dark:text-gray-400 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              window.open(bggLink, '_blank', 'noopener,noreferrer');
+            }}
+            className="text-xs text-gray-500 dark:text-gray-400 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer bg-transparent border-0 p-0"
           >
             BGG →
-          </a>
+          </button>
           <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" />
         </div>
       </CardContent>
