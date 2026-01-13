@@ -51,6 +51,31 @@ export function WishlistPageClient({ wishlistGames }: WishlistPageClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('title-asc');
 
+  // Group games by wishlist priority
+  const groupedGames = useMemo(() => {
+    const groups: Record<number, WishlistGame[]> = {
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+    };
+
+    wishlistGames.forEach((game) => {
+      const priority = game.wishlistPriority;
+      if (priority && groups[priority]) {
+        groups[priority].push(game);
+      }
+    });
+
+    // Sort each group
+    Object.keys(groups).forEach((key) => {
+      groups[Number(key)] = sortWishlistGames(groups[Number(key)], sortBy);
+    });
+
+    return groups;
+  }, [wishlistGames, sortBy]);
+
   const filteredAndSortedGames = useMemo(() => {
     let filtered = wishlistGames;
     
@@ -67,6 +92,18 @@ export function WishlistPageClient({ wishlistGames }: WishlistPageClientProps) {
     
     return sortWishlistGames(filtered, sortBy);
   }, [wishlistGames, searchQuery, sortBy]);
+
+  // Priority labels in Finnish
+  const priorityLabels: Record<number, string> = {
+    1: 'Pakko saada',
+    2: 'Rakastaisin saada',
+    3: 'Haluaisin saada',
+    4: 'Mietin vielä',
+    5: 'Älä osta tätä',
+  };
+
+  // Priority order for display
+  const priorityOrder = [1, 2, 3, 4, 5];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
@@ -159,27 +196,87 @@ export function WishlistPageClient({ wishlistGames }: WishlistPageClientProps) {
           </CardContent>
         </Card>
 
-        {/* Games Grid */}
-        {filteredAndSortedGames.length === 0 ? (
-          <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
-            <CardContent className="p-12 text-center">
-              <Gift className="h-16 w-16 mx-auto text-gray-400 dark:text-gray-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                {searchQuery ? 'Ei tuloksia' : 'Toivelista on tyhjä'}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                {searchQuery
-                  ? 'Kokeile muuttaa hakusanaa'
-                  : 'Lisää pelejä toivelistalle käyttämällä newwishlistgame -komentoa'}
-              </p>
-            </CardContent>
-          </Card>
+        {/* Games Grid - Grouped by Priority */}
+        {searchQuery ? (
+          // Show filtered results when searching
+          filteredAndSortedGames.length === 0 ? (
+            <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
+              <CardContent className="p-12 text-center">
+                <Gift className="h-16 w-16 mx-auto text-gray-400 dark:text-gray-600 mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Ei tuloksia
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Kokeile muuttaa hakusanaa
+                </p>
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredAndSortedGames.map((game) => (
+                <WishlistGameCard key={game.slug} game={game} />
+              ))}
+            </div>
+          )
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredAndSortedGames.map((game) => (
-              <WishlistGameCard key={game.slug} game={game} />
-            ))}
-          </div>
+          // Show grouped results when not searching
+          (() => {
+            const hasAnyGames = priorityOrder.some(priority => groupedGames[priority]?.length > 0);
+            
+            if (!hasAnyGames) {
+              return (
+                <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
+                  <CardContent className="p-12 text-center">
+                    <Gift className="h-16 w-16 mx-auto text-gray-400 dark:text-gray-600 mb-4" />
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      Toivelista on tyhjä
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Lisää pelejä toivelistalle käyttämällä newwishlistgame -komentoa tai tuo BGG:stä
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            }
+            
+            return priorityOrder.map((priority) => {
+              const games = groupedGames[priority];
+              if (games.length === 0) return null;
+
+              const isThinkingAboutIt = priority === 4;
+              
+              return (
+                <div key={priority} className="mb-8">
+                  <div className={`mb-4 pb-2 border-b-2 ${
+                    isThinkingAboutIt 
+                      ? 'border-purple-400 dark:border-purple-600' 
+                      : 'border-gray-300 dark:border-gray-600'
+                  }`}>
+                    <h2 className={`text-2xl font-bold ${
+                      isThinkingAboutIt
+                        ? 'text-purple-600 dark:text-purple-400'
+                        : 'text-gray-900 dark:text-white'
+                    }`}>
+                      {priorityLabels[priority]}
+                      <span className="ml-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+                        ({games.length})
+                      </span>
+                    </h2>
+                    {isThinkingAboutIt && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        Pelit, joita harkitsen vielä
+                      </p>
+                    )}
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {games.map((game) => (
+                      <WishlistGameCard key={game.slug} game={game} />
+                    ))}
+                  </div>
+                </div>
+              );
+            });
+          })()
         )}
       </div>
     </div>

@@ -14,6 +14,11 @@ const nextConfig = {
         port: '3000',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cf.geekdo-static.com',
+        pathname: '/images/**',
+      },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

@@ -167,6 +167,45 @@ src/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 
+### Importing from BoardGameGeek
+
+You can import your wishlist from BoardGameGeek using a command-line script:
+
+1. **Make your BGG collection public (if not using auth token):**
+   - Go to BGG Account Settings > Privacy
+   - Set "Collection Privacy" to **Public**
+   - This is required for the API to access your collection without authorization
+
+2. Create a `.env` file in the project root:
+```bash
+BGG_USERNAME=your_bgg_username
+# Optional: If BGG requires authorization, add:
+# BGG_AUTH_TOKEN=your_authorization_token
+```
+
+3. Run the import script:
+```bash
+node scripts/import-wishlist-from-bgg.js
+```
+
+The script will:
+- Fetch your wishlist from BGG API
+- Group games by wishlist priority:
+  - **Must have** (Priority 1)
+  - **Love to have** (Priority 2)
+  - **Like to have** (Priority 3)
+  - **Thinking about it** (Priority 4) - highlighted on wishlist page
+- Create markdown files in `content/wishlist/` directory
+- Skip games that already exist
+- Update games if wishlist priority has changed
+
+**Troubleshooting:**
+- If you get a 401 error, make sure your BGG collection is set to **Public**
+- Check that your username in `.env` matches your BGG username exactly
+- BGG API may rate-limit requests - wait a few minutes and try again if needed
+
+**Note:** This script is for local use only and requires a `.env` file with your BGG username.
+
 ## Contributing
 
 1. Fork the repository

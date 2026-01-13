@@ -10,6 +10,7 @@ tags: ['Strategy', 'Economic', 'Dice Rolling', 'Hand Management', 'Action Drafti
 recommendedForTwoPlayers: true
 description: 'Strategiapeli, jossa pelaajat palvelevat vieraita ja valmistavat huoneita tullakseen parhaaksi hotellinpitäjäksi Wienin modernissa ajassa.'
 bggValue: 50
+wishlistPriority: 4
 ---
 
 *Grand Austria Hotel* on Virginio Giglin ja Simone Lucianin suunnittelema suosittu strategiapeli, joka sijoittuu Wienin moderniin aikaan. Peli yhdistää nopanheiton, kädenhallinnan ja toimintojen valinnan luoden taktisen ja strategisen pelikokemuksen. Pelaajat pyörittävät noppia, valitsevat toimintoja ja täyttävät vieraiden toiveita rakentaakseen menestyvän hotellin. Peli tarjoaa 116 erilaista korttia, mikä varmistaa suuren uudelleenpelattavuuden. Se on erinomainen kaksinpeli, joka yhdistää nopean pelin syvälliseen strategiseen syvyyteen. Peli on saanut paljon kehuja erityisesti kaksinpelikokemuksestaan ja on noussut BGG:n top 100:een.

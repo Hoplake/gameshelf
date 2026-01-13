@@ -14,5 +14,6 @@ export interface WishlistGame {
   partyGame?: boolean;
   goodWithFivePlus?: boolean;
   bggValue?: number;
+  wishlistPriority?: number; // 1 = Must have, 2 = Love to have, 3 = Like to have, 4 = Thinking about it, 5 = Don't buy this
 }
 
