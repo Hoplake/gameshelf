@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag, UserCheck, Sparkles, UsersRound, Gift } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { MoveToGameshelfButton } from '@/components/MoveToGameshelfButton';
 
 interface WishlistGamePageProps {
   params: {
@@ -147,11 +148,13 @@ export default async function WishlistGamePage({ params }: WishlistGamePageProps
                   </div>
                   
                   <Link href={bggLink} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0">
+                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 mb-4">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Näytä BoardGameGeekissä
                     </Button>
                   </Link>
+                  
+                  <MoveToGameshelfButton slug={slug} title={title} />
                 </div>
               </CardContent>
             </Card>

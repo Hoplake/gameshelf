@@ -8,7 +8,7 @@ complexity: 2.94
 bggLink: 'https://boardgamegeek.com/boardgame/93/el-grande'
 tags: ['Area Majority / Influence', 'Action Drafting', 'Hand Management', 'Medieval']
 goodWithFivePlus: true
-played: false
+played: true
 bggValue: 50
 description: 'Klassinen aluehallintapeli, jossa pelaajat kilpailevat Espanjan alueiden hallinnasta keskiajalla käyttäen caballeroitaan ja toimintakortteja.'
 ---

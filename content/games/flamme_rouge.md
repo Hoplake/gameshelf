@@ -8,7 +8,7 @@ complexity: 2.3
 bggLink: 'https://boardgamegeek.com/boardgame/199478/flamme-rouge'
 tags: ['Racing', 'Hand Management', 'Card Play', 'Sports']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Pyöräilykilpailupeli, jossa pelaajat ohjaavat kahta pyöräilijää pyrkien ensimmäisenä maaliin hyödyntäen peesauksia ja halliten väsymystä.'
 ---
 
