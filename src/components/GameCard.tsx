@@ -22,7 +22,11 @@ export function GameCard({ game }: GameCardProps) {
 
   return (
     <Link href={`/games/${slug}`} className="group">
-      <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700">
+      <Card className={`overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] bg-white dark:bg-gray-800 ${
+        favorite 
+          ? 'border-2 border-yellow-500 dark:border-yellow-500 hover:border-yellow-600 dark:hover:border-yellow-400 shadow-md shadow-yellow-500/20' 
+          : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700'
+      }`}>
         <div 
           className="relative aspect-[3/4] overflow-hidden cursor-zoom-in"
           onMouseEnter={() => setIsZoomed(true)}

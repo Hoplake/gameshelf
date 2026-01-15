@@ -8,6 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/140934/arboretum'
 tags: ['Card Game', 'Set Collection', 'Hand Management', 'Pattern Building']
 recommendedForTwoPlayers: true
+favorite: true
 played: true
 description: 'Strateginen korttipeli, jossa pelaajat rakentavat polkuja eri puulajeista luodakseen kauneimman arboretumin.'
 ---

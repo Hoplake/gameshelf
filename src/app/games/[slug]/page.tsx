@@ -7,7 +7,7 @@ import { GameRecommendations } from '@/components/GameRecommendations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag, Star } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -36,7 +36,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const allGames = getAllGames();
   const recommendedGames = getRecommendedGames(game, allGames, 6);
 
-  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, content } = game;
+  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, content, favorite } = game;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
@@ -52,9 +52,17 @@ export default async function GamePage({ params }: GamePageProps) {
                 </Button>
               </Link>
               <div className="h-6 w-px bg-gray-300 dark:bg-gray-600" />
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                {title}
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  {title}
+                </h1>
+                {favorite && (
+                  <Badge variant="default" className="text-sm bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 border-0">
+                    <Star className="h-4 w-4 mr-1 fill-white" />
+                    Suosikki
+                  </Badge>
+                )}
+              </div>
             </div>
             <ThemeToggle />
           </div>
@@ -75,6 +83,11 @@ export default async function GamePage({ params }: GamePageProps) {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                {favorite && (
+                  <div className="absolute top-3 right-3 bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-full p-2 shadow-lg backdrop-blur-sm" title="Suosikkipeli">
+                    <Star className="h-5 w-5 fill-white" />
+                  </div>
+                )}
               </div>
               
               <CardContent className="p-6 space-y-6">
