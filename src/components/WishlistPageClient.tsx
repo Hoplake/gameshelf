@@ -95,11 +95,11 @@ export function WishlistPageClient({ wishlistGames }: WishlistPageClientProps) {
 
   // Priority labels in Finnish
   const priorityLabels: Record<number, string> = {
-    1: 'Pakko saada',
-    2: 'Rakastaisin saada',
-    3: 'Haluaisin saada',
-    4: 'Mietin vielä',
-    5: 'Älä osta tätä',
+    1: 'Pitää ostaa',
+    2: 'Haluaisin ostaa',
+    3: 'Näyttää kivalta',
+    4: 'Pitää tutustua lisää',
+    5: 'Ei kiinnostakkaan',
   };
 
   // Priority order for display

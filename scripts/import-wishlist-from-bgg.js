@@ -52,9 +52,9 @@ function parseXML(xmlText) {
     const weightMatch = content.match(/<averageweight[^>]*value="([^"]+)"/);
     const averageweight = weightMatch ? parseFloat(weightMatch[1]) : null;
     
-    // Parse status with all wishlist fields - more flexible regex
+    // Parse status with all wishlist fields - handle both self-closing and closing tags
     // Status can have attributes in any order
-    const statusEl = content.match(/<status[^>]*>([\s\S]*?)<\/status>/);
+    const statusEl = content.match(/<status[^>]*\/?>/) || content.match(/<status[^>]*>([\s\S]*?)<\/status>/);
     let own = false;
     let prevowned = false;
     let want = false;
@@ -81,6 +81,10 @@ function parseXML(xmlText) {
     
     const ratingMatch = content.match(/<rating[^>]*value="([^"]+)"/);
     const rating = ratingMatch ? parseFloat(ratingMatch[1]) : null;
+    
+    // Extract wishlist comment if available
+    const wishlistCommentMatch = content.match(/<wishlistcomment>([^<]+)<\/wishlistcomment>/);
+    const wishlistcomment = wishlistCommentMatch ? wishlistCommentMatch[1].trim() : null;
     
     // Store wishlist priority as number (1-5)
     // 1 = Must have, 2 = Love to have, 3 = Like to have, 4 = Thinking about it, 5 = Don't buy this
@@ -116,6 +120,7 @@ function parseXML(xmlText) {
       wishlistpriority,
       wishlistPriority,
       wishlistStatus,
+      wishlistcomment,
       rating,
     });
   }
@@ -274,48 +279,495 @@ function gameToSlug(name) {
 
 function generateWishlistMarkdown(game) {
   const slug = gameToSlug(game.name);
-  const complexity = game.averageweight || 0;
-  const playTime = game.playingtime || game.maxplaytime || game.minplaytime || 30;
-  const playerCount = [
-    game.minplayers || 1,
-    game.maxplayers || game.minplayers || 4,
-  ];
   
-  const tags = [];
-  if (game.minplayers === 2 && game.maxplayers === 2) {
-    tags.push('Two Player');
+  // Use detailed stats if available, otherwise fall back to defaults
+  const complexity = game.averageweight || 0;
+  
+  // Calculate playtime range
+  let playTimeMin = game.minplaytime || game.playingtime || 30;
+  let playTimeMax = game.maxplaytime || game.playingtime || playTimeMin;
+  if (playTimeMin === playTimeMax) {
+    playTimeMax = playTimeMin; // Keep as single value if same
   }
-  if (game.maxplayers && game.maxplayers >= 5) {
-    tags.push('Party Game');
+  
+  // Calculate player count range
+  const playerCountMin = game.minplayers || 1;
+  const playerCountMax = game.maxplayers || game.minplayers || 4;
+  
+  const playerCount = [playerCountMin, playerCountMax];
+  const playTime = [playTimeMin, playTimeMax];
+  
+  // Determine if it's a two-player game
+  const isTwoPlayer = playerCountMin === 2 && playerCountMax === 2;
+  const recommendedForTwoPlayers = isTwoPlayer;
+  // Use BGG recommended player count if available, otherwise infer
+  const recommendedPlayerCount = game.recommendedPlayerCount || (isTwoPlayer ? [2, 2] : null);
+  
+  // Determine if it's a party game or good with 5+
+  const partyGame = playerCountMax && playerCountMax >= 5;
+  const goodWithFivePlus = playerCountMax && playerCountMax >= 5;
+  
+  // Generate tags - use BGG tags if available, otherwise infer from game characteristics
+  let tags = [];
+  if (game.bggTags && game.bggTags.length > 0) {
+    // Use BGG categories and mechanics as tags
+    tags = game.bggTags;
+  } else {
+    // Fallback to inferred tags
+    if (isTwoPlayer) {
+      tags.push('Two Player');
+    }
+    if (partyGame) {
+      tags.push('Party Game');
+    }
+    if (tags.length === 0) {
+      tags.push('Board Game');
+    }
   }
-  if (tags.length === 0) {
-    tags.push('Board Game');
+
+  // Build BGG link using objectid from XML
+  const bggLink = `https://boardgamegeek.com/boardgame/${game.id}/${slug}`;
+  
+  // Generate Finnish description (one sentence) - like newwishlistgame command
+  let description = '';
+  if (game.wishlistcomment) {
+    // Use wishlist comment if available
+    description = game.wishlistcomment.replace(/'/g, "''");
+  } else {
+    // Generate description based on game characteristics
+    const playerText = isTwoPlayer ? 'kaksinpeli' : `${playerCountMin}-${playerCountMax} pelaajalle`;
+    const timeText = playTimeMin === playTimeMax ? `${playTimeMin} minuuttia` : `${playTimeMin}-${playTimeMax} minuuttia`;
+    const mainTag = tags.length > 0 && tags[0] !== 'Board Game' ? tags[0] : 'lautapeli';
+    const typeText = mainTag.toLowerCase();
+    description = `${typeText.charAt(0).toUpperCase() + typeText.slice(1)}, ${playerText}, peliaika ${timeText}.`;
+  }
+
+  // Generate Finnish overview paragraph - like newwishlistgame command
+  function generateFinnishOverview(game) {
+    const playerText = isTwoPlayer 
+      ? 'kaksinpeli' 
+      : playerCountMin === playerCountMax 
+        ? `${playerCountMin} pelaajalle` 
+        : `${playerCountMin}-${playerCountMax} pelaajalle`;
+    
+    const timeText = playTimeMin === playTimeMax 
+      ? `${playTimeMin} minuuttia` 
+      : `${playTimeMin}-${playTimeMax} minuuttia`;
+    
+    const complexityText = complexity > 0 
+      ? `Monimutkaisuus ${complexity.toFixed(1)}/5.0. ` 
+      : '';
+    
+    // Get main category/mechanic for description
+    const mainTag = tags.length > 0 && tags[0] !== 'Board Game' ? tags[0] : null;
+    const typeText = mainTag ? mainTag.toLowerCase() : 'lautapeli';
+    
+    let overview = `*${game.name}* on ${typeText} ${playerText}. `;
+    
+    if (game.bggDescription) {
+      // Use BGG description (cleaned and shortened)
+      const bggDesc = game.bggDescription
+        .replace(/<[^>]+>/g, '')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .substring(0, 300)
+        .trim();
+      overview += bggDesc + ' ';
+    } else {
+      // Generate basic description
+      overview += `Peli kestää ${timeText}. `;
+      if (complexityText) {
+        overview += complexityText;
+      }
+    }
+    
+    // Add why it's on wishlist (if wishlist comment exists)
+    if (game.wishlistcomment) {
+      overview += game.wishlistcomment + ' ';
+    } else {
+      // Generic appeal text based on game type
+      if (isTwoPlayer) {
+        overview += 'Erinomainen valinta kaksinpelaamiseen. ';
+      } else if (partyGame) {
+        overview += 'Sopii hyvin isommille porukoille. ';
+      }
+      overview += 'Peli on toivelistalla, koska se vaikuttaa mielenkiintoiselta ja sopivalta pelikokemukselta.';
+    }
+    
+    return overview.trim();
+  }
+
+  const overview = generateFinnishOverview(game);
+
+  // Build optional fields
+  const optionalFields = [];
+  
+  if (recommendedPlayerCount) {
+    optionalFields.push(`recommendedPlayerCount: [${recommendedPlayerCount[0]}, ${recommendedPlayerCount[1]}]`);
+  }
+  
+  if (recommendedForTwoPlayers) {
+    optionalFields.push(`recommendedForTwoPlayers: true`);
+  }
+  
+  if (partyGame) {
+    optionalFields.push(`partyGame: true`);
+  }
+  
+  if (goodWithFivePlus) {
+    optionalFields.push(`goodWithFivePlus: true`);
   }
 
   // Add wishlist priority to frontmatter (as number)
-  const wishlistPriorityField = game.wishlistPriority 
-    ? `wishlistPriority: ${game.wishlistPriority}\n` 
-    : '';
+  if (game.wishlistPriority) {
+    optionalFields.push(`wishlistPriority: ${game.wishlistPriority}`);
+  }
+
+  const optionalFieldsStr = optionalFields.length > 0 ? '\n' + optionalFields.join('\n') : '';
 
   const frontmatter = `---
 title: '${game.name.replace(/'/g, "''")}'
 coverImage: '/images/covers/${slug}_cover.jpg'
 playerCount: [${playerCount[0]}, ${playerCount[1]}]
-playTime: [${playTime}, ${playTime}]
+playTime: [${playTime[0]}, ${playTime[1]}]
 complexity: ${complexity.toFixed(2)}
-bggLink: 'https://boardgamegeek.com/boardgame/${game.id}/${slug}'
+bggLink: '${bggLink}'
 tags: [${tags.map(t => `'${t}'`).join(', ')}]
-description: '${game.name} - tuotu BGG:stä'
-${wishlistPriorityField}---
+description: '${description}'${optionalFieldsStr}
+---
 
-*${game.name}* on lautapeli, joka on tuotu BoardGameGeekistä. Lisää pelin kuvaus tähän.
+${overview}
 
 `;
 
   return frontmatter;
 }
 
+async function fetchGameDetails(gameIds) {
+  return new Promise((resolve, reject) => {
+    if (gameIds.length === 0) {
+      resolve({});
+      return;
+    }
+    
+    // BGG API allows up to 100 IDs per request
+    const chunks = [];
+    for (let i = 0; i < gameIds.length; i += 100) {
+      chunks.push(gameIds.slice(i, i + 100));
+    }
+    
+    const allDetails = {};
+    let completed = 0;
+    
+    chunks.forEach((chunk, chunkIndex) => {
+      const ids = chunk.join(',');
+      const url = `https://boardgamegeek.com/xmlapi2/thing?id=${ids}&stats=1`;
+      
+      console.log(`📡 Haetaan pelin tietoja (${chunkIndex + 1}/${chunks.length}): ${chunk.length} peliä...`);
+      
+      const options = {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+      };
+      
+      https.get(url, options, (res) => {
+        let data = '';
+        
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+        
+        res.on('end', () => {
+          if (res.statusCode !== 200) {
+            console.warn(`⚠️  Varoitus: Pelin tietojen haku epäonnistui (status: ${res.statusCode})`);
+            completed++;
+            if (completed === chunks.length) {
+              resolve(allDetails);
+            }
+            return;
+          }
+          
+          // Parse game details from XML
+          const itemMatches = data.matchAll(/<item[^>]*id="(\d+)"[^>]*>([\s\S]*?)<\/item>/g);
+          
+          for (const match of itemMatches) {
+            const id = match[1];
+            const content = match[2];
+            
+            const gameDetails = {};
+            
+            // Parse stats
+            const statsMatch = content.match(/<statistics[^>]*>([\s\S]*?)<\/statistics>/);
+            if (statsMatch) {
+              const statsContent = statsMatch[1];
+              
+              const minplayersMatch = statsContent.match(/<minplayers[^>]*value="(\d+)"/);
+              const maxplayersMatch = statsContent.match(/<maxplayers[^>]*value="(\d+)"/);
+              const minplaytimeMatch = statsContent.match(/<minplaytime[^>]*value="(\d+)"/);
+              const maxplaytimeMatch = statsContent.match(/<maxplaytime[^>]*value="(\d+)"/);
+              const playingtimeMatch = statsContent.match(/<playingtime[^>]*value="(\d+)"/);
+              const weightMatch = statsContent.match(/<averageweight[^>]*value="([^"]+)"/);
+              
+              gameDetails.minplayers = minplayersMatch ? parseInt(minplayersMatch[1]) : null;
+              gameDetails.maxplayers = maxplayersMatch ? parseInt(maxplayersMatch[1]) : null;
+              gameDetails.minplaytime = minplaytimeMatch ? parseInt(minplaytimeMatch[1]) : null;
+              gameDetails.maxplaytime = maxplaytimeMatch ? parseInt(maxplaytimeMatch[1]) : null;
+              gameDetails.playingtime = playingtimeMatch ? parseInt(playingtimeMatch[1]) : null;
+              gameDetails.averageweight = weightMatch ? parseFloat(weightMatch[1]) : null;
+            }
+            
+            // Parse description
+            const descriptionMatch = content.match(/<description[^>]*>([\s\S]*?)<\/description>/);
+            if (descriptionMatch) {
+              // Clean HTML tags and decode entities
+              let description = descriptionMatch[1]
+                .replace(/<[^>]+>/g, '') // Remove HTML tags
+                .replace(/&nbsp;/g, ' ')
+                .replace(/&amp;/g, '&')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#10;/g, '\n')
+                .trim();
+              
+              // Take first paragraph or first 500 characters
+              const firstParagraph = description.split('\n\n')[0] || description;
+              gameDetails.description = firstParagraph.substring(0, 500).trim();
+            }
+            
+            // Parse categories and mechanics for tags
+            const categories = [];
+            const categoryMatches = content.matchAll(/<link[^>]*type="boardgamecategory"[^>]*value="([^"]+)"/g);
+            for (const catMatch of categoryMatches) {
+              categories.push(catMatch[1]);
+            }
+            
+            const mechanics = [];
+            const mechanicMatches = content.matchAll(/<link[^>]*type="boardgamemechanic"[^>]*value="([^"]+)"/g);
+            for (const mechMatch of mechanicMatches) {
+              mechanics.push(mechMatch[1]);
+            }
+            
+            // Combine categories and mechanics for tags
+            gameDetails.tags = [...categories, ...mechanics].slice(0, 10); // Limit to 10 tags
+            
+            // Parse recommended player count from polls
+            const pollsMatch = content.match(/<poll[^>]*name="suggested_numplayers"[^>]*>([\s\S]*?)<\/poll>/);
+            if (pollsMatch) {
+              const pollContent = pollsMatch[1];
+              // Find the player count with highest "Best" votes
+              const resultMatches = pollContent.matchAll(/<result[^>]*numplayers="(\d+)"[^>]*>([\s\S]*?)<\/result>/g);
+              let bestPlayerCount = null;
+              let maxBestVotes = 0;
+              
+              for (const resultMatch of resultMatches) {
+                const numPlayers = parseInt(resultMatch[1]);
+                const resultContent = resultMatch[2];
+                const bestMatch = resultContent.match(/<result[^>]*value="Best"[^>]*numvotes="(\d+)"/);
+                if (bestMatch) {
+                  const bestVotes = parseInt(bestMatch[1]);
+                  if (bestVotes > maxBestVotes) {
+                    maxBestVotes = bestVotes;
+                    bestPlayerCount = numPlayers;
+                  }
+                }
+              }
+              
+              if (bestPlayerCount) {
+                gameDetails.recommendedPlayerCount = [bestPlayerCount, bestPlayerCount];
+              }
+            }
+            
+            allDetails[id] = gameDetails;
+          }
+          
+          completed++;
+          if (completed === chunks.length) {
+            resolve(allDetails);
+          }
+        });
+      }).on('error', (err) => {
+        console.warn(`⚠️  Varoitus: Pelin tietojen haku epäonnistui: ${err.message}`);
+        completed++;
+        if (completed === chunks.length) {
+          resolve(allDetails);
+        }
+      });
+    });
+  });
+}
+
+async function processGames(games) {
+  // Fetch detailed game stats from BGG API
+  const gameIds = games.map(g => g.id).filter(Boolean);
+  console.log(`\n📡 Haetaan yksityiskohtaisia tietoja ${gameIds.length} pelistä BGG:stä...`);
+  const gameDetails = await fetchGameDetails(gameIds);
+  console.log(`✅ Haettu tietoja ${Object.keys(gameDetails).length} pelistä\n`);
+  
+  // Merge game details with collection data
+  const enrichedGames = games.map(game => {
+    const details = gameDetails[game.id] || {};
+    return {
+      ...game,
+      minplayers: game.minplayers || details.minplayers,
+      maxplayers: game.maxplayers || details.maxplayers,
+      minplaytime: game.minplaytime || details.minplaytime,
+      maxplaytime: game.maxplaytime || details.maxplaytime,
+      playingtime: game.playingtime || details.playingtime,
+      averageweight: game.averageweight || details.averageweight,
+      bggDescription: details.description || null,
+      bggTags: details.tags || [],
+      recommendedPlayerCount: details.recommendedPlayerCount || null,
+    };
+  });
+  
+  // Group games by wishlist priority
+  const grouped = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+  };
+  
+  enrichedGames.forEach(game => {
+    const priority = game.wishlistPriority;
+    if (priority && grouped[priority]) {
+      grouped[priority].push(game);
+    }
+  });
+  
+  // Print grouping summary
+  console.log('📊 Ryhmittely wishlist-prioriteetin mukaan:');
+  const priorityLabels = {
+    1: 'Pakko saada',
+    2: 'Rakastaisin saada',
+    3: 'Haluaisin saada',
+    4: 'Mietin vielä',
+    5: 'Älä osta tätä',
+  };
+  Object.entries(grouped).forEach(([priority, items]) => {
+    if (items.length > 0) {
+      const priorityLabel = priorityLabels[Number(priority)] || `Priority ${priority}`;
+      console.log(`   ${priorityLabel}: ${items.length} peliä`);
+    }
+  });
+  console.log('');
+  
+  // Ensure directory exists
+  if (!fs.existsSync(wishlistDirectory)) {
+    fs.mkdirSync(wishlistDirectory, { recursive: true });
+  }
+  
+  let imported = 0;
+  let skipped = 0;
+  let updated = 0;
+  
+  for (const game of enrichedGames) {
+    const slug = gameToSlug(game.name);
+    const filePath = path.join(wishlistDirectory, `${slug}.md`);
+    
+    const markdown = generateWishlistMarkdown(game);
+    
+    if (fs.existsSync(filePath)) {
+      // Check if file needs updating
+      const existingContent = fs.readFileSync(filePath, 'utf8');
+      
+      // Check if file has valid complexity (not 0.00) and proper playTime
+      const complexityMatch = existingContent.match(/complexity:\s*([\d.]+)/);
+      const existingComplexity = complexityMatch ? parseFloat(complexityMatch[1]) : 0;
+      
+      const playTimeMatch = existingContent.match(/playTime:\s*\[(\d+),\s*(\d+)\]/);
+      const existingPlayTime = playTimeMatch ? [parseInt(playTimeMatch[1]), parseInt(playTimeMatch[2])] : null;
+      
+      // Check if playTime is just default [30, 30]
+      const hasDefaultPlayTime = existingPlayTime && existingPlayTime[0] === 30 && existingPlayTime[1] === 30;
+      
+      // Check priority
+      const existingPriorityMatch = existingContent.match(/wishlistPriority:\s*(?:'([^']+)'|(\d+))/);
+      const existingPriority = existingPriorityMatch 
+        ? (existingPriorityMatch[2] ? Number(existingPriorityMatch[2]) : existingPriorityMatch[1])
+        : null;
+      
+      // Convert old string format to number for comparison
+      let existingPriorityNum = null;
+      if (typeof existingPriority === 'number') {
+        existingPriorityNum = existingPriority;
+      } else if (typeof existingPriority === 'string') {
+        const priorityMap = {
+          'Must have': 1,
+          'Love to have': 2,
+          'Like to have': 3,
+          'Thinking about it': 4,
+          "Don't buy this": 5,
+        };
+        existingPriorityNum = priorityMap[existingPriority] || null;
+      }
+      
+      // Update if priority changed, complexity is 0, or playTime is default
+      const needsUpdate = existingPriorityNum !== game.wishlistPriority || 
+                         existingComplexity === 0 || 
+                         hasDefaultPlayTime ||
+                         !playTimeMatch;
+      
+      if (needsUpdate) {
+        fs.writeFileSync(filePath, markdown, 'utf8');
+        const reasons = [];
+        if (existingPriorityNum !== game.wishlistPriority) reasons.push('priority');
+        if (existingComplexity === 0) reasons.push('complexity');
+        if (hasDefaultPlayTime || !playTimeMatch) reasons.push('playTime');
+        console.log(`🔄 Päivitetty: ${game.name} (${reasons.join(', ')})`);
+        updated++;
+      } else {
+        console.log(`⏭️  Ohitettu (on jo olemassa): ${game.name}`);
+        skipped++;
+      }
+    } else {
+      fs.writeFileSync(filePath, markdown, 'utf8');
+      console.log(`✅ Tuotu: ${game.name} (priority: ${game.wishlistPriority || 'none'}) -> ${slug}.md`);
+      imported++;
+    }
+  }
+  
+  console.log(`\n✨ Valmis!`);
+  console.log(`   Tuotu: ${imported} peliä`);
+  console.log(`   Päivitetty: ${updated} peliä`);
+  console.log(`   Ohitettu: ${skipped} peliä`);
+}
+
 async function importWishlist() {
+  const localXmlPath = path.join(process.cwd(), 'content/wishlist.xml');
+  
+  // Check if local XML file exists
+  if (fs.existsSync(localXmlPath)) {
+    console.log('📄 Löytyi paikallinen XML-tiedosto, käytetään sitä...');
+    console.log(`📂 Tiedosto: ${localXmlPath}`);
+    
+    try {
+      const xmlContent = fs.readFileSync(localXmlPath, 'utf8');
+      const games = parseXML(xmlContent);
+      
+      if (games.length === 0) {
+        console.log('❌ Ei löytynyt pelejä XML-tiedostosta');
+        return;
+      }
+      
+      console.log(`✅ Luettu ${games.length} peliä XML-tiedostosta\n`);
+      
+      // Continue with processing...
+      await processGames(games);
+      return;
+    } catch (error) {
+      console.error('❌ Virhe luettaessa XML-tiedostoa:', error.message);
+      console.log('Yritetään hakea BGG:stä sen sijaan...\n');
+    }
+  }
+  
+  // Fall back to API if no local file
   const username = process.env.BGG_USERNAME;
   const authToken = process.env.BGG_AUTH_TOKEN; // Optional authorization token
   
@@ -323,6 +775,7 @@ async function importWishlist() {
     console.error('❌ Virhe: BGG_USERNAME puuttuu .env-tiedostosta');
     console.log('Lisää .env-tiedostoon: BGG_USERNAME=yourusername');
     console.log('Vaihtoehtoisesti lisää BGG_AUTH_TOKEN jos BGG vaatii autorisointia');
+    console.log('\n💡 Vinkki: Voit myös ladata XML-tiedoston content/wishlist.xml ja skripti käyttää sitä automaattisesti!');
     process.exit(1);
   }
   
@@ -340,101 +793,7 @@ async function importWishlist() {
     
     console.log(`✅ Löydettiin ${games.length} peliä toivelistalta\n`);
     
-    // Group games by wishlist priority
-    const grouped = {
-      'Must have': [],
-      'Love to have': [],
-      'Like to have': [],
-      'Thinking about it': [],
-      'Other': [],
-    };
-    
-    games.forEach(game => {
-      const priority = game.wishlistPriority;
-      if (priority && grouped[priority]) {
-        grouped[priority].push(game);
-      }
-    });
-    
-    // Print grouping summary
-    console.log('📊 Ryhmittely wishlist-prioriteetin mukaan:');
-    const priorityLabels = {
-      1: 'Pakko saada',
-      2: 'Rakastaisin saada',
-      3: 'Haluaisin saada',
-      4: 'Mietin vielä',
-      5: 'Älä osta tätä',
-    };
-    Object.entries(grouped).forEach(([priority, items]) => {
-      if (items.length > 0) {
-        const priorityLabel = priorityLabels[Number(priority)] || `Priority ${priority}`;
-        console.log(`   ${priorityLabel}: ${items.length} peliä`);
-      }
-    });
-    console.log('');
-    
-    // Ensure directory exists
-    if (!fs.existsSync(wishlistDirectory)) {
-      fs.mkdirSync(wishlistDirectory, { recursive: true });
-    }
-    
-    let imported = 0;
-    let skipped = 0;
-    let updated = 0;
-    
-    for (const game of games) {
-      const slug = gameToSlug(game.name);
-      const filePath = path.join(wishlistDirectory, `${slug}.md`);
-      
-      const markdown = generateWishlistMarkdown(game);
-      
-      if (fs.existsSync(filePath)) {
-        // Check if file needs updating (compare wishlist status)
-        const existingContent = fs.readFileSync(filePath, 'utf8');
-        const existingStatusMatch = existingContent.match(/wishlistStatus:\s*(\w+)/);
-        const existingStatus = existingStatusMatch ? existingStatusMatch[1] : null;
-        
-        // Match both old string format and new number format
-        const existingPriorityMatch = existingContent.match(/wishlistPriority:\s*(?:'([^']+)'|(\d+))/);
-        const existingPriority = existingPriorityMatch 
-          ? (existingPriorityMatch[2] ? Number(existingPriorityMatch[2]) : existingPriorityMatch[1])
-          : null;
-        
-        // Convert old string format to number for comparison
-        let existingPriorityNum = null;
-        if (typeof existingPriority === 'number') {
-          existingPriorityNum = existingPriority;
-        } else if (typeof existingPriority === 'string') {
-          const priorityMap = {
-            'Must have': 1,
-            'Love to have': 2,
-            'Like to have': 3,
-            'Thinking about it': 4,
-            "Don't buy this": 5,
-          };
-          existingPriorityNum = priorityMap[existingPriority] || null;
-        }
-        
-        if (existingPriorityNum !== game.wishlistPriority) {
-          // Update file with new priority
-          fs.writeFileSync(filePath, markdown, 'utf8');
-          console.log(`🔄 Päivitetty: ${game.name} (priority: ${game.wishlistPriority || 'none'})`);
-          updated++;
-        } else {
-          console.log(`⏭️  Ohitettu (on jo olemassa): ${game.name}`);
-          skipped++;
-        }
-      } else {
-        fs.writeFileSync(filePath, markdown, 'utf8');
-        console.log(`✅ Tuotu: ${game.name} (priority: ${game.wishlistPriority || 'none'}) -> ${slug}.md`);
-        imported++;
-      }
-    }
-    
-    console.log(`\n✨ Valmis!`);
-    console.log(`   Tuotu: ${imported} peliä`);
-    console.log(`   Päivitetty: ${updated} peliä`);
-    console.log(`   Ohitettu: ${skipped} peliä`);
+    await processGames(games);
   } catch (error) {
     console.error('❌ Virhe:', error.message);
     process.exit(1);

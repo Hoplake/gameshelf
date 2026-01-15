@@ -24,7 +24,9 @@ export function getAllWishlistGames(): WishlistGame[] {
           const { data, content } = matter(fileContents);
 
           // Validate required fields
-          if (!data.title || !data.playerCount || !data.playTime || !data.complexity || !data.tags) {
+          // Note: complexity can be 0, so check for null/undefined explicitly
+          if (!data.title || !data.playerCount || !data.playTime || 
+              (data.complexity === null || data.complexity === undefined) || !data.tags) {
             console.warn(`Skipping ${fileName} - missing required fields`);
             return null;
           }

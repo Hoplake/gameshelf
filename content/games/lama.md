@@ -8,7 +8,7 @@ complexity: 1.1
 bggLink: 'https://boardgamegeek.com/boardgame/266083/llama'
 tags: ['Card Game', 'Hand Management', 'Set Collection']
 recommendedForTwoPlayers: false
-played: false
+played: true
 description: 'Kevyt korttipeli, jossa pelaajat yrittävät päästä eroon korteistaan välttääkseen rangaistuspisteitä.'
 ---
 
