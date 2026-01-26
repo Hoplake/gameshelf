@@ -16,6 +16,7 @@ export interface Game {
   played?: boolean;
   description?: string;
   bggValue?: number; // Estimated value in EUR/USD
+  bgaLink?: string; // Board Game Arena link
 }
 
 export interface GameFilters {

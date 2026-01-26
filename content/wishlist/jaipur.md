@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 description: 'Kauppapeli, jossa pelaajat kilpailevat tulemalla rikkaimmaksi kauppiaaksi Jaipurissa vaihtamalla ja myymällä tavaroita.'
 bggValue: 20
 wishlistPriority: 4
+bgaLink: 'https://boardgamearena.com/gamepanel?game=jaipur'
 ---
 
 *Jaipur* on nopea ja hauska kaksinpeli, jossa pelaajat kilpailevat tulemalla rikkaimmaksi kauppiaaksi Rajasthanin pääkaupungissa. Peli yhdistää kädenhallinnan, markkinamekaniikat ja strategisen suunnittelun. Pelaajat keräävät tavaroita (timantteja, kultaa, hopeaa, kangasta, mausteita ja nahkaa), vaihtavat niitä markkinoilla ja myyvät ne parhaaseen mahdolliseen hintaan. Peli on yksinkertainen oppia, mutta tarjoaa syvällistä strategista syvyyttä. Se on erinomainen valinta pariskunnille ja kaikille, jotka etsivät nopeaa mutta strategista kaksinpeliä. Jaipur on saanut lukuisia palkintoja ja on yksi suosituimmista kaksinpeleistä.

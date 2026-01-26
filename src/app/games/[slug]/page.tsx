@@ -36,7 +36,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const allGames = getAllGames();
   const recommendedGames = getRecommendedGames(game, allGames, 6);
 
-  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, content, favorite } = game;
+  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, bgaLink, tags, content, favorite } = game;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
@@ -144,14 +144,22 @@ export default async function GamePage({ params }: GamePageProps) {
                   </div>
                 </div>
 
-                {/* BGG Link */}
-                <div className="pt-4 border-t">
+                {/* External Links */}
+                <div className="pt-4 border-t space-y-3">
                   <Link href={bggLink} target="_blank" rel="noopener noreferrer">
                     <Button className="w-full" variant="outline">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Näytä BoardGameGeekissä
                     </Button>
                   </Link>
+                  {bgaLink && (
+                    <Link href={bgaLink} target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full" variant="outline">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Pelaa Board Game Arenassa
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </CardContent>
             </Card>

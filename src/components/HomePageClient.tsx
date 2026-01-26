@@ -9,7 +9,7 @@ import { HomePageSkeleton } from '@/components/LoadingSkeleton';
 import { filterGames, sortGames } from '@/lib/games';
 import { calculateStats } from '@/lib/statistics';
 import { Game, GameFilters as GameFiltersType, SortOption } from '@/types/game';
-import { Search, Grid, List, Shuffle, BarChart3, Gift, ShoppingBag } from 'lucide-react';
+import { Search, Grid, List, Shuffle, BarChart3, Gift, ShoppingBag, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -128,6 +128,19 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
                 >
                   <ShoppingBag className="h-4 w-4 sm:mr-2" />
                   <span className="hidden sm:inline">Kaupat</span>
+                </Button>
+              </Link>
+
+              {/* BGA Link */}
+              <Link href="/bga" className="flex-1 sm:flex-none">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full sm:w-auto hover:bg-cyan-50 dark:hover:bg-cyan-950 border-gray-300 dark:border-gray-600"
+                  title="Näytä Board Game Arena -pelit"
+                >
+                  <ExternalLink className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">BGA</span>
                 </Button>
               </Link>
 

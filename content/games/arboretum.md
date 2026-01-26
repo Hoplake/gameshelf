@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 favorite: true
 played: true
 description: 'Strateginen korttipeli, jossa pelaajat rakentavat polkuja eri puulajeista luodakseen kauneimman arboretumin.'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=arboretum'
 ---
 
 *Arboretum* on strateginen korttipeli 2–4 pelaajalle, jossa pelaajat rakentavat polkuja eri puulajeista luodakseen kauneimman arboretumin. Pelaajat valitsevat huolellisesti, mitkä kortit pelaavat ja mitkä pitävät kädessään, sillä vain tietyt polut tuottavat pisteitä pelin lopussa. Peli yhdistää yksinkertaiset säännöt syvälliseen strategiaan, vaatien pelaajilta tarkkaa suunnittelua ja korttien hallintaa. Jokainen pelikerta on erilainen, ja pelaajien täytyy tasapainotella oman arboretumin rakentamisen ja vastustajien estämisen välillä.

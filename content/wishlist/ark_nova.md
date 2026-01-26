@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 description: 'Strategiapeli, jossa pelaajat suunnittelevat ja rakentavat modernin, tieteellisesti johdetun eläintarhan tukeakseen suojeluhankkeita.'
 bggValue: 60
 wishlistPriority: 2
+bgaLink: 'https://boardgamearena.com/gamepanel?game=arknova'
 ---
 
 *Ark Nova* on Mathias Wigen suunnittelema syvä strategiapeli, joka on noussut BGG:n kolmanneksi parhaaksi peliksi. Peli yhdistää kädenhallinnan, ruudukonpeittämisen ja sopimusten täyttämisen luoden rikkaan ja monipuolisen pelikokemuksen. Pelaajat rakentavat eläintarhaa, asuttavat eläimiä, rakentavat aitauksia ja tukea suojeluhankkeita. Peli käyttää innovatiivista toimintakorttijärjestelmää, jossa korttien sijainti määrittää niiden voiman. Peli on monimutkainen mutta palkitseva, ja se tarjoaa valtavan uudelleenpelattavuuden 255 kortin ansiosta. Se on erinomainen valinta strategiapelien ystäville, jotka etsivät syvällistä ja haastavaa pelikokemusta.

@@ -30,7 +30,7 @@ export default async function WishlistGamePage({ params }: WishlistGamePageProps
     notFound();
   }
 
-  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, tags, description, overview, recommendedForTwoPlayers, partyGame, goodWithFivePlus, bggValue } = game;
+  const { title, coverImage, playerCount, recommendedPlayerCount, playTime, complexity, bggLink, bgaLink, tags, description, overview, recommendedForTwoPlayers, partyGame, goodWithFivePlus, bggValue } = game;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950/30 dark:to-purple-950/30">
@@ -148,11 +148,20 @@ export default async function WishlistGamePage({ params }: WishlistGamePageProps
                   </div>
                   
                   <Link href={bggLink} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 mb-4">
+                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 mb-3">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Näytä BoardGameGeekissä
                     </Button>
                   </Link>
+                  
+                  {bgaLink && (
+                    <Link href={bgaLink} target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 border-0 mb-4">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Pelaa Board Game Arenassa
+                      </Button>
+                    </Link>
+                  )}
                   
                   <MoveToGameshelfButton slug={slug} title={title} />
                 </div>
