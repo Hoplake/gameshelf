@@ -73,7 +73,7 @@ export function GameFilters({
     filters.goodWithFivePlus === true ||
     filters.favorite === true ||
     (filters.tags && filters.tags.length > 0) ||
-    (filters.playedStatus !== undefined && filters.playedStatus !== 'played');
+    filters.playedStatus !== 'played';
 
   if (!isMounted) {
     return (
@@ -152,7 +152,7 @@ export function GameFilters({
         <div className="space-y-2.5">
           <label className="text-sm font-semibold text-gray-900 dark:text-white">Pelatut pelit</label>
           <Select 
-            value={filters.playedStatus || 'played'} 
+            value={filters.playedStatus ?? 'all'} 
             onValueChange={handlePlayedStatusChange}
           >
             <SelectTrigger id="played-status-select">

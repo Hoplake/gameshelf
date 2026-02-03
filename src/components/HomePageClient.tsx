@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { GameCard } from '@/components/GameCard';
 import { GameFilters } from '@/components/GameFilters';
 import { RandomGamePicker } from '@/components/RandomGamePicker';
@@ -14,14 +15,28 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
+const PLAYED_PARAM = 'played';
+
+function getInitialPlayedStatus(searchParams: URLSearchParams): GameFiltersType['playedStatus'] {
+  const played = searchParams.get(PLAYED_PARAM);
+  if (played === 'all') return undefined;
+  if (played === 'unplayed') return 'unplayed';
+  return 'played';
+}
+
 interface HomePageClientProps {
   allGames: Game[];
   availableTags: string[];
 }
 
 export function HomePageClient({ allGames, availableTags }: HomePageClientProps) {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
-  const [filters, setFilters] = useState<GameFiltersType>({ playedStatus: 'played' });
+  const [filters, setFilters] = useState<GameFiltersType>(() => ({
+    playedStatus: getInitialPlayedStatus(searchParams),
+  }));
   const [sortBy, setSortBy] = useState<SortOption>('title-asc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isMounted, setIsMounted] = useState(false);
@@ -30,6 +45,19 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  // Sync URL with played filter so ?played=all is shareable
+  useEffect(() => {
+    if (!isMounted) return;
+    const current = searchParams.get(PLAYED_PARAM);
+    const want = filters.playedStatus === undefined ? 'all' : filters.playedStatus;
+    if (current === want) return;
+    const next = new URLSearchParams(searchParams.toString());
+    if (want === 'played') next.delete(PLAYED_PARAM);
+    else next.set(PLAYED_PARAM, want);
+    const url = next.toString() ? `${pathname}?${next.toString()}` : pathname;
+    router.replace(url, { scroll: false });
+  }, [isMounted, filters.playedStatus, pathname, router, searchParams]);
 
   // Filter and sort games
   const filteredAndSortedGames = useMemo(() => {
@@ -54,6 +82,7 @@ export function HomePageClient({ allGames, availableTags }: HomePageClientProps)
   const handleClearFilters = () => {
     setFilters({ playedStatus: 'played' });
     setSearchQuery('');
+    router.replace(pathname, { scroll: false });
   };
 
   if (!isMounted) {
