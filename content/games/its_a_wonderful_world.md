@@ -10,6 +10,7 @@ tags: ['Card Game', 'Drafting', 'Engine Building', 'Solo']
 recommendedForTwoPlayers: false
 played: true
 description: 'Korttienhallintapeli, jossa pelaajat rakentavat sivilisaatioita draftaten kortteja ja rakentamalla projekteja.'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=itsawonderfulworld'
 ---
 
 *It's a Wonderful World* on korttienhallintapeli 1–5 pelaajalle, jossa pelaajat rakentavat sivilisaatioita draftaten kortteja ja rakentamalla projekteja. Pelaajat draftaavat kortteja, rakentavat projekteja ja keräävät resursseja saadakseen pisteitä. Jokainen projekti vaatii resursseja, ja pelaajien täytyy rakentaa projekteja tehokkaasti saadakseen eniten pisteitä. Tavoitteena on kerätä eniten pisteitä rakentamalla projekteja ja kehittämällä sivilisaatiota.

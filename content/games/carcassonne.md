@@ -13,6 +13,7 @@ favorite: true
 played: true
 bggValue: 30
 description: 'Klassinen laatikkopeli, jossa pelaajat rakentavat keskiaikaista Carcassonnen kaupunkia asettamalla laattoja ja sijoittamalla seuraajia eri alueisiin.'
+bgalink: 'https://boardgamearena.com/gamepanel?game=carcassonne'
 ---
 
 *Carcassonne* on klassinen laatikkopeli 2–5 pelaajalle. Pelaajat rakentavat keskiaikaista Carcassonnen kaupunkia asettamalla laattoja ja sijoittamalla seuraajia (meeplejä) kaupunkeihin, teihin, peltoihin ja luostareihin. Tavoitteena on kerätä eniten pisteitä valmistuneista alueista ja pelin lopussa pelloista. Peli on yksinkertainen oppia, mutta tarjoaa syvää strategista pelattavuutta.

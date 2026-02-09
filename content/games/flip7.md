@@ -12,6 +12,7 @@ goodWithFivePlus: true
 played: true
 bggValue: 20
 description: 'Nopea push-your-luck -korttipeli, jossa pelaajat kääntävät kortteja yksi kerrallaan ilman, että he kääntävät samaa numeroa kahdesti. Tavoitteena on kerätä pisteitä kääntämällä kortteja, mutta riski on suuri - jos käännetään sama numero kahdesti, menetetään kaikki.'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=flipseven'
 ---
 
 *Flip 7* on nopea push-your-luck -korttipeli 3–18 pelaajalle (paras 5–6 pelaajalle). Pelaajat kääntävät kortteja yksi kerrallaan ilman, että he kääntävät samaa numeroa kahdesti. Tavoitteena on kerätä pisteitä kääntämällä kortteja, mutta riski on suuri - jos käännetään sama numero kahdesti, menetetään kaikki. Peli sisältää myös erikoisia kortteja, jotka voivat antaa bonuspisteitä, toisen mahdollisuuden tai jäädyttää pelaajia.

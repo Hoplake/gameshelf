@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 played: true
 bggValue: 40
 description: 'Strategiapeli, jossa pelaajat kehittävät kartanolejaan keskiaikaisessa Ranskassa rakentamalla asutuksia, linnoja ja kauppareittejä.'
+bgalink: 'https://boardgamearena.com/gamepanel?game=castlesofburgundy'
 ---
 
 *The Castles of Burgundy* on strategiapeli 2–4 pelaajalle, jossa pelaajat kehittävät kartanolejaan keskiaikaisessa Ranskassa rakentamalla asutuksia, linnoja ja kauppareittejä. Pelaajat heittävät noppia, keräävät laattoja ja asettavat ne kartanoonsa saadakseen pisteitä. Peli yhdistää noppien heittämisen, laattojen asettelun ja joukkojen keräämisen. Tavoitteena on kerätä eniten pisteitä rakentamalla kartanoa ja täyttämällä erilaisia tavoitteita. Peli on syvällinen, strateginen ja tarjoaa pitkän pelikokemuksen.

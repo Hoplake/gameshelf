@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 description: 'Laattojen asettelu- ja kuvioiden rakentamispeli, jossa pelaajat rakentavat luontomaisemia ja sijoittavat eläimiä elinympäristöihinsä.'
 bggValue: 35
 played: true
+bgaLink: 'https://boardgamearena.com/gamepanel?game=harmonies'
 ---
 
 *Harmonies* on Johan Benvenuton suunnittelema laattojen asettelu- ja kuvioiden rakentamispeli 2–4 pelaajalle (2024, Libellud). Pelaajat rakentavat kolmiulotteisia maisemia draftaten ja asettelemalla värikkäitä tokeneita henkilökohtaisille laudoilleen luoden luontoeläimille elinympäristöjä. Jokaisella vuorolla pelaaja ottaa kolme tokenia keskuslaudalta ja asettaa ne omaan lautaan, voi ottaa eläinkortin ja voi sijoittaa eläinkuutioita valmiisiin elinympäristökuvioihin. Peli sisältää kaksi pisteytystä: ennalta määritellyt kuviot (puut, vuoret, pellot) pisteytetään automaattisesti, ja eläinkortit antavat lisäpisteitä, kun pelaaja täyttää kortissa vaaditun kuvion laudallaan. Pelissä on kaksipuoleiset henkilökohtaiset laudat ja mahdollisuus yksinpeliin.

@@ -11,6 +11,7 @@ goodWithFivePlus: true
 played: true
 bggValue: 35
 description: 'Noppapeli, jossa pelaajat ohjaavat jättiläishirviöitä taistelemassa Tokion hallinnasta heittämällä noppia ja käyttämällä kortteja.'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=kingoftokyo'
 ---
 Tämä tiivistelmä perustuu antamiisi lähdeaineistoihin, jotka kuvaavat **King of Tokyo** -pelin sääntöjä.
 

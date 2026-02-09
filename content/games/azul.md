@@ -11,6 +11,7 @@ recommendedForTwoPlayers: true
 description: 'Laattojen draftauspeli, jossa kerätään värikkäitä laattoja tehdasnäytöistä ja keskustasta ja täytetään seinäkuvio-rivejä.'
 bggValue: 35
 played: true
+bgalink: 'https://boardgamearena.com/gamepanel?game=azul'
 ---
 
 *Azul* on Michael Kieslingin suunnittelema abstrakti laattojen draftauspeli 2–4 pelaajalle (Plan B Games / Next Move). Pelaajat keräävät samanvärisiä laattoja joko tehdasnäytöistä tai pöydän keskustasta ja sijoittavat ne oman laudan **kuvioriveille** (1–5 paikkaa per rivi, yksi väri per rivi). Ylimääräiset laatat menevät **lattiariville** ja aiheuttavat miinuspisteitä. Kierroksen lopussa täytetyt kuviorivit siirtävät yhden laatan **seinälle**; seinällä pisteet lasketaan naapureiden mukaan. Peli päättyy, kun joku täyttää viiden laatan vaakarivin seinällä; lopussa bonukset täysistä riveistä, sarakkeista ja viidestä samanvärisestä laatasta. Azul voitti Spiel des Jahres -palkinnon 2018.

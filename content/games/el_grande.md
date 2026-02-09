@@ -11,6 +11,7 @@ goodWithFivePlus: true
 played: true
 bggValue: 50
 description: 'Klassinen aluehallintapeli, jossa pelaajat kilpailevat Espanjan alueiden hallinnasta keskiajalla käyttäen caballeroitaan ja toimintakortteja.'
+bgalink: 'https://boardgamearena.com/gamepanel?game=elgrande'
 ---
 
 *El Grande* on klassinen aluehallintapeli 2–5 pelaajalle, joka sijoittuu 1400-luvun Espanjaan. Pelaajat ottavat roolin mahtavina aatelisina (Grandes), jotka kilpailevat eri alueiden hallinnasta. Kuninkaan valta heikkenee, ja pelaajat lähettävät caballeroitaan (ritareita) kilpailemaan alueiden enemmistöstä. Peli koostuu yhdeksästä kierroksesta, ja joka kolmannen kierroksen jälkeen alueet pisteytetään. Pelaajat käyttävät voimakortteja määrittääkseen vuorojärjestyksen ja toimintakortteja vaikuttaakseen pelin kulkuun. Tavoitteena on saavuttaa enemmistö mahdollisimman monessa alueessa pisteytyskierrosten aikana.

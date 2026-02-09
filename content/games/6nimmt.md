@@ -13,6 +13,7 @@ recommendedForTwoPlayers: false
 played: false
 bggValue: 12
 description: 'Korttipeli, jossa pelaajat yrittävät välttää korttien keräämistä, jotka antavat negatiivisia pisteitä.'
+bgalink: 'https://boardgamearena.com/gamepanel?game=sechsnimmt'
 ---
 
 *6nimmt!* on nopea korttipeli 2–10 pelaajalle, jossa pelaajat yrittävät välttää korttien keräämistä, jotka antavat negatiivisia pisteitä. Pelaajat pelaavat kortteja samanaikaisesti ja kortit järjestetään riveihin. Jos pelaaja pelaa kortin, joka ei sovi mihinkään riviin, hänen täytyy ottaa rivi, joka antaa hänelle negatiivisia pisteitä. Tavoitteena on kerätä mahdollisimman vähän negatiivisia pisteitä. Peli on yksinkertainen, nopea ja hauska, sopien suuremmillekin pelaajaryhmille.
