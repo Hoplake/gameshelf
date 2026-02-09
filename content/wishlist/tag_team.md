@@ -9,6 +9,7 @@ tags: ['Fighting', 'Deck Building', 'Auto Battler', 'Two Player', 'Card Game']
 recommendedForTwoPlayers: true
 description: 'Kaksinpeli: autobattler ja deckbuilder yhdistettynä – kaksi taistelijaa, korteilla ohjelmoidaan iskujen järjestys.'
 wishlistPriority: 4
+bggValue: 23
 bgaLink: 'https://boardgamearena.com/gamepanel?game=tagteam'
 ---
 
