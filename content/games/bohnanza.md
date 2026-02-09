@@ -10,7 +10,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/11/bohnanza'
 tags: ['Trading', 'Set Collection', 'Hand Management', 'Negotiation']
 played: true
 description: 'Kauppapeli, jossa pelaajat viljelevät papuja, käyvät kauppaa ja neuvottelevat saadakseen parhaat yhdistelmät ja eniten kolikoita.'
-bgalink: 'https://boardgamearena.com/gamepanel?game=bohnanza'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=bohnanza'
 ---
 
 *Bohnanza* on kauppapeli 2–5 pelaajalle, jossa pelaajat viljelevät papuja, käyvät kauppaa ja neuvottelevat saadakseen parhaat yhdistelmät. Peli on tunnettu siitä, että korttien järjestystä kädessä ei saa muuttaa, mikä luo ainutlaatuisen strategisen haasteen. Tavoitteena on kerätä eniten kolikoita myymällä papuja oikeaan aikaan ja käymällä kauppaa muiden pelaajien kanssa.

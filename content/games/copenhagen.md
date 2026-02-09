@@ -10,7 +10,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/269595/copenhagen'
 tags: ['Drafting', 'Set Collection', 'Hand Management', 'Pattern Building']
 played: true
 description: 'Draftauspeli, jossa pelaajat rakentavat talon julkisivuja polyomino-laatoista täyttäen vaakarivejä ja pystysarakkeita pisteiden saamiseksi.'
-bgalink: 'https://boardgamearena.com/gamepanel?game=copenhagen'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=copenhagen'
 ---
 
 *Cøpenhagen* on draftauspeli 2–4 pelaajalle, jossa pelaajat rakentavat oman pelilautansa (talon julkisivun) mahdollisimman paljon valmiita vaakarivejä ja pystysarakkeita polyomino-laatoista. Pelaajat keräävät kortteja, joilla rakennetaan laattoja, ja täyttävät rivejä ja sarakkeita saadakseen pisteitä. Ensimmäinen 12 pisteeseen päässyt tai eniten pisteitä pelin päättyessä saanut voittaa.

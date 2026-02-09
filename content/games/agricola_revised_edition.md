@@ -12,7 +12,7 @@ recommendedForTwoPlayers: true
 favorite: true
 played: true
 bggValue: 45
-bgalink: 'https://boardgamearena.com/gamepanel?game=agricola'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=agricola'
 description: 'Klassinen työläistenasettelupeli, jossa pelaajat toimivat 1600-luvun maanviljelijöinä laajentaen maatilaansa, kasvattaen perhettään ja viljellen maata.'
 ---
 

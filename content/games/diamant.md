@@ -13,7 +13,7 @@ recommendedForTwoPlayers: false
 played: true
 bggValue: 20
 description: 'Push-your-luck -peli, jossa pelaajat tutkivat kaivoksia keräten jalokiviä ja välttäen vaaroja.'
-bgalink: 'https://boardgamearena.com/gamepanel?game=incangold'
+bgaLink: 'https://boardgamearena.com/gamepanel?game=incangold'
 ---
 
 *Diamant* on push-your-luck -peli 3–8 pelaajalle, jossa pelaajat tutkivat kaivoksia keräten jalokiviä ja välttäen vaaroja. Pelaajat päättävät vuorotellen, jatkavatko he tutkimista vai palaavatko leiriin turvaan. Jatkaessaan tutkimista pelaajat voivat löytää enemmän jalokiviä, mutta myös kohdata vaaroja, jotka voivat aiheuttaa heille tappion. Tavoitteena on kerätä eniten jalokiviä pelin lopussa. Peli on yksinkertainen, jännittävä ja sopii suuremmillekin pelaajaryhmille.
