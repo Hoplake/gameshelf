@@ -10,6 +10,7 @@ tags: ['Card Game', 'Set Collection', 'Push Your Luck', 'Hand Management']
 goodWithFivePlus: true
 description: 'Nopea korttipeli, jossa kerätään settejä, otetaan riskejä ja yritetään kerätä eniten pisteitä.'
 wishlistPriority: 4
+bggValue: 15
 bgaLink: 'https://boardgamearena.com/gamepanel?game=seasaltpaper'
 ---
 

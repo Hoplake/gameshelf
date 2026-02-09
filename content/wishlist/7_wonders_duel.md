@@ -10,6 +10,7 @@ tags: ['Card Drafting', 'Civilization', 'Set Collection', 'Tableau Building']
 recommendedForTwoPlayers: true
 description: 'Napakka kaksinpeli, jossa rakennetaan sivilisaatiota korttivalintojen, resurssien ja ihmeiden avulla.'
 wishlistPriority: 4
+bggValue: 30
 bgaLink: 'https://boardgamearena.com/gamepanel?game=sevenwondersduel'
 ---
 

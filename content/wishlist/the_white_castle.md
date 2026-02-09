@@ -9,6 +9,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/371942/the_white_castle'
 tags: ['Worker Placement', 'Dice Rolling', 'Building', 'Medieval']
 description: 'Euro, jossa työntekijöitä asetellaan, heitetään noppia ja hallitaan Himejin linnan klaaneja Japanissa.'
 wishlistPriority: 4
+bggValue: 40
 bgaLink: 'https://boardgamearena.com/gamepanel?game=thewhitecastle'
 ---
 

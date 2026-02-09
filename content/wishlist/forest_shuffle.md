@@ -10,6 +10,7 @@ tags: ['Card Game', 'Set Collection', 'Hand Management', 'Nature']
 goodWithFivePlus: true
 description: 'Korttipeli, jossa rakennetaan metsäekosysteemiä yhdistämällä eläin- ja kasvikortteja.'
 wishlistPriority: 4
+bggValue: 35
 bgaLink: 'https://boardgamearena.com/gamepanel?game=forestshuffle'
 ---
 
