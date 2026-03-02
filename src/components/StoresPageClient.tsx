@@ -58,6 +58,12 @@ const stores: Store[] = [
     country: 'SE',
   },
   {
+    name: "Dragon's Lair",
+    url: 'https://dragonslair.se/advanced_search_result.php?search_in_description=1&keywords={search}',
+    description: 'Brädspel och sällskapsspel – Stockholm och online',
+    country: 'SE',
+  },
+  {
     name: 'Philibert',
     url: 'https://www.philibertnet.com/en/search?search_query={searchparameter}',
     description: 'Ranskalainen lautapelikauppa',
