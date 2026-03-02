@@ -8,7 +8,7 @@ complexity: 2.2
 bggLink: 'https://boardgamegeek.com/boardgame/348406/marvel-dice-throne'
 tags: ['Dice Rolling', 'Card Game', 'Combat', 'Take That', 'Superhero']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Nopea noppienheittopeli, jossa pelaajat ottavat roolin Marvel-supersankareina ja taistelevat noppia heittämällä ja kortteja pelaamalla.'
 ---
 

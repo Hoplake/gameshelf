@@ -8,7 +8,7 @@ complexity: 3.2
 bggLink: 'https://boardgamegeek.com/boardgame/167791/terraforming-mars'
 tags: ['Strategy', 'Engine Building', 'Card Game', 'Economic', 'Solo']
 recommendedForTwoPlayers: true
-played: false
+played: true
 bggValue: 60
 description: 'Strategiapeli, jossa pelaajat tekevät Marsista asumiskelpoisen nostamalla lämpötilaa, luomalla meriä ja kasvattamalla vihreää.'
 ---

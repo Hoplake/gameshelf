@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/200853/habitats'
 tags: ['Tile Placement', 'Set Collection', 'Animals', 'Solo']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Laattojenasettelupeli, jossa pelaajat rakentavat elinympäristöjä eläimille keräten pisteitä.'
 ---
 

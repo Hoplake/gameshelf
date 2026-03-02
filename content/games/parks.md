@@ -8,7 +8,7 @@ complexity: 2.5
 bggLink: 'https://boardgamegeek.com/boardgame/266524/parks'
 tags: ['Strategy', 'Set Collection', 'Travel', 'Worker Placement']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Strateginen lautapeli, jossa pelaajat vaeltavat Yhdysvaltain kansallispuistoissa keräten resursseja ja muistoja.'
 ---
 

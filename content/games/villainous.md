@@ -8,7 +8,7 @@ complexity: 2.3
 bggLink: 'https://boardgamegeek.com/boardgame/256382/disney-villainous'
 tags: ['Strategy', 'Asymmetric', 'Card Game', 'Thematic']
 recommendedForTwoPlayers: false
-played: false
+played: true
 description: 'Strategiapeli, jossa pelaajat ottavat roolin Disneyn konnista, joilla jokaisella on omat ainutlaatuiset tavoitteet.'
 ---
 

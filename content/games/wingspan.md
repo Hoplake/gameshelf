@@ -8,7 +8,7 @@ complexity: 2.4
 bggLink: 'https://boardgamegeek.com/boardgame/266192/wingspan'
 tags: ['Engine Building', 'Card Game', 'Set Collection', 'Animals', 'Solo']
 recommendedForTwoPlayers: true
-played: false
+played: true
 bggValue: 50
 description: 'Moottorinrakennuspeli, jossa pelaajat houkuttelevat lintuja luonnonsuojelualueilleen keräten pisteitä.'
 ---

@@ -8,7 +8,7 @@ complexity: 2.0
 bggLink: 'https://boardgamegeek.com/boardgame/334065/verdant'
 tags: ['Tile Placement', 'Set Collection', 'Pattern Building', 'Solo']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Laattojenasettelupeli, jossa pelaajat luovat viihtyisän sisätilan täynnä huonekasveja ja huonekaluja.'
 ---
 
