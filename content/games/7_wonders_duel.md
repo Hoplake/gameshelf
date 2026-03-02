@@ -9,9 +9,9 @@ bggLink: 'https://boardgamegeek.com/boardgame/173346/7_wonders_duel'
 tags: ['Card Drafting', 'Civilization', 'Set Collection', 'Tableau Building']
 recommendedForTwoPlayers: true
 description: 'Napakka kaksinpeli, jossa rakennetaan sivilisaatiota korttivalintojen, resurssien ja ihmeiden avulla.'
-wishlistPriority: 4
 bggValue: 30
 bgaLink: 'https://boardgamearena.com/gamepanel?game=sevenwondersduel'
+played: false
 ---
 
-*7 Wonders Duel* on napakka ja taktinen kaksinpeli, jossa kiehtoo jatkuva korttien avaamisen ja vastustajan estämisen jännite. Peli on nopea mutta täynnä merkityksellisiä päätöksiä, ja se toimii erinomaisesti pienessä ajassa. Haluaisin tämän, koska se tarjoaa tiukan kaksinpelikokemuksen ilman pitkää setupia.
+*7 Wonders Duel* on napakka ja taktinen kaksinpeli, jossa kiehtoo jatkuva korttien avaamisen ja vastustajan estämisen jännite. Peli on nopea mutta täynnä merkityksellisiä päätöksiä, ja se toimii erinomaisesti pienessä ajassa. Se tarjoaa tiukan kaksinpelikokemuksen ilman pitkää setupia.
