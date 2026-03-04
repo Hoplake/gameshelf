@@ -9,6 +9,7 @@ bggLink: 'https://boardgamegeek.com/boardgame/177736/a-feast-for-odin'
 tags: ['Worker Placement', 'Economic', 'Puzzle', 'Norse']
 description: 'Syvällinen työntekijänasettelupeli viikinkien elämästä, jossa rakennetaan, metsästetään ja kehitetään omaa tilaa.'
 wishlistPriority: 4
+bgaLink: 'https://boardgamearena.com/gamepanel?game=feastforodin'
 ---
 
 *A Feast for Odin* kiinnostaa erityisesti valtavan toimintovalikoiman ja polyomino-tyylisen resurssipuzzlen vuoksi. Peli lupaa paljon vapautta rakentaa omaa strategiaa ja tarjoaa runsaasti uudelleenpelattavuutta eri moduulien kautta. Haluaisin tämän, koska se vaikuttaa pitkän illan euroklassikolta, jossa joka peli tuntuu hieman erilaiselta.
