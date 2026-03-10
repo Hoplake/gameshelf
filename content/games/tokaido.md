@@ -8,7 +8,7 @@ complexity: 1.8
 bggLink: 'https://boardgamegeek.com/boardgame/123540/tokaido'
 tags: ['Point-to-Point Movement', 'Set Collection', 'Travel']
 recommendedForTwoPlayers: false
-played: false
+played: true
 description: 'Matkailupeli, jossa pelaajat matkustavat historiallista Tokaido-tietä pitkin Japanissa keräten elämyksiä, matkamuistoja ja maisemia.'
 ---
 
