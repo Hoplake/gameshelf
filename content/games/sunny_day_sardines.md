@@ -8,7 +8,7 @@ complexity: 1.0
 bggLink: 'https://boardgamegeek.com/boardgame/335872/sunny-day-sardines'
 tags: ['Card Game', 'Set Collection', 'Hand Management']
 recommendedForTwoPlayers: true
-played: false
+played: true
 description: 'Kevyt korttipeli, jossa pelaajat keräävät sardiinikortteja täyttääkseen tilauksia ja kerätäkseen pisteitä.'
 ---
 
