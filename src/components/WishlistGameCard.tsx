@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { WishlistGame } from '@/types/wishlist';
+import { formatPlayerCountRange } from '@/lib/utils';
 import { Users, Clock, Brain, ExternalLink, UserCheck, Sparkles, UsersRound } from 'lucide-react';
 import { useState } from 'react';
 
@@ -96,7 +97,7 @@ export function WishlistGameCard({ game }: WishlistGameCardProps) {
         <div className="flex flex-col gap-2.5 text-sm text-gray-600 dark:text-gray-400">
           <div className="flex items-center gap-2">
             <Users className="h-4 w-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-            <span className="truncate font-medium">{playerCount[0]}-{playerCount[1]} pelaajaa</span>
+            <span className="truncate font-medium">{formatPlayerCountRange(playerCount)} pelaajaa</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4 flex-shrink-0 text-pink-600 dark:text-pink-400" />

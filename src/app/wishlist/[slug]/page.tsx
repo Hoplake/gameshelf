@@ -8,6 +8,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag, UserCheck, Sparkles, UsersRound, Gift } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { MoveToGameshelfButton } from '@/components/MoveToGameshelfButton';
+import { formatPlayerCountRange } from '@/lib/utils';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 
 interface WishlistGamePageProps {
   params: {
@@ -83,11 +86,11 @@ export default async function WishlistGamePage({ params }: WishlistGamePageProps
                       <Users className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                       <div>
                         <div className="font-semibold text-gray-900 dark:text-white">
-                          {playerCount[0]}-{playerCount[1]} pelaajaa
+                          {formatPlayerCountRange(playerCount)} pelaajaa
                         </div>
                         {recommendedPlayerCount && (
                           <div className="text-sm text-gray-600 dark:text-gray-400">
-                            Suositeltu: {recommendedPlayerCount[0]}-{recommendedPlayerCount[1]} pelaajaa
+                            Suositeltu: {formatPlayerCountRange(recommendedPlayerCount)} pelaajaa
                           </div>
                         )}
                       </div>
@@ -171,23 +174,37 @@ export default async function WishlistGamePage({ params }: WishlistGamePageProps
 
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
-            {description && (
+            {description?.trim() && (
               <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Kuvaus</h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{description}</p>
+                  <div className="prose prose-gray dark:prose-invert max-w-none prose-p:text-gray-700 dark:prose-p:text-gray-300">
+                    <MDXRemote
+                      source={description.trim()}
+                      options={{
+                        mdxOptions: {
+                          remarkPlugins: [remarkGfm],
+                        },
+                      }}
+                    />
+                  </div>
                 </CardContent>
               </Card>
             )}
 
-            {overview && (
+            {overview?.trim() && (
               <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Yleiskuvaus</h3>
-                  <div className="prose prose-gray dark:prose-invert max-w-none">
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-                      {overview}
-                    </p>
+                  <div className="prose prose-gray dark:prose-invert max-w-none prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:text-gray-900 dark:prose-headings:text-white">
+                    <MDXRemote
+                      source={overview.trim()}
+                      options={{
+                        mdxOptions: {
+                          remarkPlugins: [remarkGfm],
+                        },
+                      }}
+                    />
                   </div>
                 </CardContent>
               </Card>

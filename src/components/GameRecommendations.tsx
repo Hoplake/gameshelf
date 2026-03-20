@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Game } from '@/types/game';
+import { formatPlayerCountRange } from '@/lib/utils';
 import { Sparkles, ExternalLink } from 'lucide-react';
 
 interface GameRecommendationsProps {
@@ -61,7 +62,7 @@ export function GameRecommendations({ games, currentGameSlug }: GameRecommendati
                     )}
                   </div>
                   <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                    <span>{game.playerCount[0]}-{game.playerCount[1]} pelaajaa</span>
+                    <span>{formatPlayerCountRange(game.playerCount)} pelaajaa</span>
                     <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </CardContent>

@@ -8,7 +8,7 @@ complexity: 3.8
 bggLink: 'https://boardgamegeek.com/boardgame/177736/a-feast-for-odin'
 tags: ['Worker Placement', 'Economic', 'Puzzle', 'Norse']
 description: 'Syvällinen työntekijänasettelupeli viikinkien elämästä, jossa rakennetaan, metsästetään ja kehitetään omaa tilaa.'
-wishlistPriority: 4
+wishlistPriority: 2
 bgaLink: 'https://boardgamearena.com/gamepanel?game=feastforodin'
 ---
 

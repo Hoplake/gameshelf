@@ -10,7 +10,7 @@ tags: ['Hand Management', 'Set Collection', 'Tile Placement', 'Route Building']
 recommendedForTwoPlayers: true
 partyGame: false
 goodWithFivePlus: false
-played: false
+played: true
 bggValue: 30
 description: 'Kaksinpeli, jossa kuljet reittejä villissä maassa, keräät kortteja ja rakennat moottoreita pisteitä keräten.'
 ---

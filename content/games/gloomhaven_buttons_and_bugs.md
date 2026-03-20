@@ -10,7 +10,7 @@ tags: ['Solo', 'Card Play', 'Dungeon Crawler', 'Campaign']
 recommendedForTwoPlayers: false
 partyGame: false
 goodWithFivePlus: false
-played: false
+played: true
 bggValue: 25
 description: 'Pussikokoinen Gloomhaven-solopeli, jossa taistelut käydään korttivalinnoilla ja nappuloilla pöydällä.'
 ---

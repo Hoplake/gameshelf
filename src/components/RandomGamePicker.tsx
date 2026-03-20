@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Game } from '@/types/game';
+import { formatPlayerCountRange } from '@/lib/utils';
 import { Users, Clock, Brain, ExternalLink, Shuffle, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
@@ -113,7 +114,7 @@ export function RandomGamePicker({ games, onClose }: RandomGamePickerProps) {
                           <Users className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                           <span className="text-xs text-gray-600 dark:text-gray-400">Pelaajat</span>
                           <span className="font-semibold text-gray-900 dark:text-white">
-                            {pickedGame.playerCount[0]}-{pickedGame.playerCount[1]}
+                            {formatPlayerCountRange(pickedGame.playerCount)}
                           </span>
                         </div>
                         <div className="flex flex-col items-center gap-1 p-2 bg-gray-50 dark:bg-gray-700 rounded">

@@ -11,6 +11,7 @@ import { ArrowLeft, ExternalLink, Users, Clock, Brain, Tag, Star } from 'lucide-
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { formatPlayerCountRange } from '@/lib/utils';
 
 interface GamePageProps {
   params: {
@@ -98,10 +99,10 @@ export default async function GamePage({ params }: GamePageProps) {
                     <div>
                       <div className="font-medium">Pelaajat</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">
-                        {playerCount[0]}-{playerCount[1]}
+                        {formatPlayerCountRange(playerCount)}
                         {recommendedPlayerCount && (
                           <span className="ml-2 text-xs text-gray-500 dark:text-gray-500">
-                            (suositus: {recommendedPlayerCount[0]}-{recommendedPlayerCount[1]})
+                            (suositus: {formatPlayerCountRange(recommendedPlayerCount)})
                           </span>
                         )}
                       </div>
